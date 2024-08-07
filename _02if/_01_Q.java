@@ -16,7 +16,7 @@ public class _01_Q {
 		60점 미만 F 출력*/
 		
 		String name="신태균";
-		int num;
+		int num=20152211;
 		int age=18;
 		int score=66;
 		String grade;
@@ -36,7 +36,7 @@ public class _01_Q {
 				grade="F";
 			}
 			
-			System.out.println(name+"/"+grade);
+			System.out.println(name+"/"+num+"/"+grade);
 		}
 	}
 
