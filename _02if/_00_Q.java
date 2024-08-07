@@ -17,7 +17,7 @@ public class _00_Q {
 		0-1사이이면 보너스 점수를 획득한다. 보너스 점수는 현재 point의 10%이다.*/
 		
 		int point=20;
-		int x=22;
+		int x=1;
 		if(x>=31) {
 			point+=7;
 		}else if(x>=21) {

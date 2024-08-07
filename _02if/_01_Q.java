@@ -1,6 +1,6 @@
 package _02if;
 
-public class _01Q {
+public class _01_Q {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,11 +15,29 @@ public class _01Q {
 		60점 이상 D
 		60점 미만 F 출력*/
 		
-		String name;
+		String name="신태균";
 		int num;
-		int age;
-		int score;
-		
+		int age=18;
+		int score=66;
+		String grade;
+		if(age<18) {
+			System.out.println("18세 미만은 수강신청 불가");
+		}else {
+			if(score>=90) {
+				grade="A";
+			}else if(score>=80) {
+				grade="B";
+			}else if(score>=70) {
+				grade="C";
+			}else if(score>=60) {
+				name+="*";
+				grade="D";
+			}else {
+				grade="F";
+			}
+			
+			System.out.println(name+"/"+grade);
+		}
 	}
 
 }
