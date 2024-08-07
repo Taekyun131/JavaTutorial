@@ -59,16 +59,16 @@ public class _03_Q {
 	 System.out.println(sumArray);
 	 
 	 //문제 7
-	 int [] a2= {45,34,64};
-	 int a20Sum=(a2[0]/10)+(a2[0]%10);
-	 int a21Sum=(a2[1]/10)+(a2[1]%10);
-	 int a22Sum=(a2[2]/10)+(a2[2]%10);
-	 if ((a20Sum>=a21Sum)&&(a20Sum>=a22Sum)) {
-		 System.out.println("선택할 숫자: 0번째"+" 숫자의 합: "+a20Sum );
-	 }else if(a21Sum>=a22Sum) {
-		 System.out.println("선택할 숫자: 1번째"+" 숫자의 합: "+a21Sum);
+	 int [] b= {45,34,64};
+	 int b0Sum=(b[0]/10)+(b[0]%10);
+	 int b1Sum=(b[1]/10)+(b[1]%10);
+	 int b2Sum=(b[2]/10)+(b[2]%10);
+	 if ((b0Sum>=b1Sum)&&(b0Sum>=b2Sum)) {
+		 System.out.println("선택할 숫자: 0번째"+" 숫자의 합: "+b0Sum );
+	 }else if(b1Sum>=b2Sum) {
+		 System.out.println("선택할 숫자: 1번째"+" 숫자의 합: "+b1Sum);
 	 }else {
-		 System.out.println("선택할 숫자: 2번째"+" 숫자의 합: "+a22Sum);
+		 System.out.println("선택할 숫자: 2번째"+" 숫자의 합: "+b2Sum);
 	 }
 	 
 	 //문제 8
