@@ -47,18 +47,20 @@ public class _01_Q {
 		sum2=sum2-minVal;
 		System.out.println("최저점수를 포함하지 않는 평균: "+(double)sum2/(count2-1));
 		
-		//for문 두개
-//				for(int i=0;i<5;i++) {
-//				if(a[i]<minVal) {
-//					minVal=a[i];
-//					}
-//				}
-//				for(int i=0;i<5;i++) {
-//					if(minVal!=a[i]) {
-//						sum2+=a[i];
-//						count2++;
-//					}
-//				}
+		//최저점수 제외 평균 for문 두개사용
+		//최저값 찾기
+//		for(int i=0;i<5;i++) {
+//		if(a[i]<minVal) {
+//			minVal=a[i];
+//			}
+//		}
+//		//누적합 구하기
+//		for(int i=0;i<5;i++) {
+//			if(minVal!=a[i]) {
+//				sum2+=a[i];
+//				count2++;
+//			}
+//		}
 	}
 
 }
