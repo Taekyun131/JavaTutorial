@@ -1,6 +1,6 @@
 package _03for;
 
-public class _01_Q2 {
+public class _01_Q {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
