@@ -1,7 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _13_mission2_03 {
-
+public class _03_mission02_03 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//10 9 8 7 6 5 4 3 2 1 출력
@@ -10,5 +9,5 @@ public class _13_mission2_03 {
 		}
 
 	}
-
+	
 }

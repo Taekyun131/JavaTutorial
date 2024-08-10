@@ -1,7 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _23_mission2_13 {
-
+public class _13_mission02_13 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//숫자가 터널일 때, 터널의 길이가 가장 긴 숫자와 길이 출력

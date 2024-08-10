@@ -1,6 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _19_mission2_09 {
+public class _09_missioin02_09 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

@@ -1,7 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _17_mission2_07 {
-
+public class _07_mission02_07 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//배열의 값의 총합

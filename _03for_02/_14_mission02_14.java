@@ -1,7 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _24_mission2_14 {
-
+public class _14_mission02_14 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//가장 긴 터널의 알파벳 이름과 숫자 출력

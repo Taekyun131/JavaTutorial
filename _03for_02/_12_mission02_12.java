@@ -1,7 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _22_mission2_12 {
-
+public class _12_mission02_12 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//가장 긴 터널의 길이 구하기(0은 터널)
@@ -22,5 +21,4 @@ public class _22_mission2_12 {
 		}
 		System.out.println(maxCount);
 	}
-
 }

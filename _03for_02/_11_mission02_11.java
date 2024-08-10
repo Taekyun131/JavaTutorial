@@ -1,7 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _21_mission2_11 {
-
+public class _11_mission02_11 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//100부터 999까지 숫자중 각 자리수를 더한 값이 짝수인 값 출력

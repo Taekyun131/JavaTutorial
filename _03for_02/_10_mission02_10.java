@@ -1,6 +1,6 @@
-package _03for;
+package _03for_02;
 
-public class _20_mission2_10 {
+public class _10_mission02_10 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -16,7 +16,6 @@ public class _20_mission2_10 {
 		
 		}
 		System.out.println(maxVal+"/"+maxIndex);
-		
 	}
 
 }
