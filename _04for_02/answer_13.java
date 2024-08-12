@@ -5,7 +5,7 @@ public class answer_13 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int [] arr={1,2,3,0,0,0,1,2,3,4,5,2,2,2,2,0,0,0,0,0,0,0};
-		int cnt=1;
+		int cnt=0;
 		int bT=arr[0];
 		int maxLength=0;
 		int maxIndex=0;

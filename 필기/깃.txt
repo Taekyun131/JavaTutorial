@@ -1,0 +1,255 @@
+human-teacher@DESKTOP-4J9B8HB MINGW64 ~
+$ pwd
+/c/Users/human-teacher
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 ~
+$ cd d:
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d
+$ pwd
+/d
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d
+$ ls
+'$RECYCLE.BIN'/                     app/
+ 240129_tr/                         javaprogram/
+'ChatGPT, brityRPA연동하는 방법'/   msdia80.dll*
+ Data/                              pagefile.sys
+ DumpStack.log.tmp                  src/
+'System Volume Information'/        도영피드백.txt
+ WINDOWS.X64_193000_db_home/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d
+$ cd data
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data
+$ pwd
+/d/data
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data
+$ ls
+ 220727/                  230828_자료실/   Eclipse_web/   wordata/
+'220727 과정형 교사용'/   240129/          KinfolkSoft/   zzz_src/
+ 230125/                  240129_tr/       bak/           과정운영/
+'230125 교사용'/          240129교사용/    data/          교사김은수/
+ 230125_Study/            240805/          mySrc/         바탕화면0622/
+ 230828/                  240805_tr/       src/
+ 230828_교사/             240805_교사용/   tmp/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data
+$ cd 240805_tr
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr
+$ pwd
+/d/data/240805_tr
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr
+$ ls
+java_src/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr
+$ cd java_src
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src
+$ pwd
+/d/data/240805_tr/java_src
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src
+$ ls
+JavaStudy/  JavaTutorial/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src
+$ cd javaturorial
+bash: cd: javaturorial: No such file or directory
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src
+$ cd javatutorial
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial
+$ ls
+bin/  src/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial
+$ cd sr
+bash: cd: sr: No such file or directory
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial
+$ cd src
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src
+$ pwd
+/d/data/240805_tr/java_src/javatutorial/src
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src
+$ git init
+Initialized empty Git repository in D:/Data/240805_tr/java_src/JavaTutorial/src/.git/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git config --global user.name 'kimtr'
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git config --global user.email 'nagneoo@naver.com'
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git remote
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ gir remote add origin https://github.com/KimTrLab/JavaTutorial.git
+bash: gir: command not found
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git remote add origin https://github.com/KimTrLab/JavaTutorial.git
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ girt remote
+bash: girt: command not found
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git remote
+origin
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git temote -v
+git: 'temote' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git temote -d
+git: 'temote' is not a git command. See 'git --help'.
+
+The most similar command is
+        remote
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git remote -v
+origin  https://github.com/KimTrLab/JavaTutorial.git (fetch)
+origin  https://github.com/KimTrLab/JavaTutorial.git (push)
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git branch
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git branch main
+fatal: not a valid object name: 'master'
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git add *
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ status
+bash: status: command not found
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   "_00\353\263\200\354\210\230/Test01.java"
+
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git commit -m '00변수 공부'
+[master (root-commit) c5428c8] 00변수 공부
+ 1 file changed, 19 insertions(+)
+ create mode 100644 "_00\353\263\200\354\210\230/Test01.java"
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git push -f origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/KimTrLab/JavaTutorial.git'
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git branch main
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git branch
+  main
+* master
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git checkput main
+git: 'checkput' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (master)
+$ git checkout main
+Switched to branch 'main'
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git push -f origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 526 bytes | 526.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KimTrLab/JavaTutorial.git
+ + a857e15...c5428c8 main -> main (forced update)
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        "_00\353\263\200\354\210\230/Test02.java"
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git add *
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git commit -m '00변수 미션 수행 완료'
+[main 4cadeae] 00변수 미션 수행 완료
+ 1 file changed, 12 insertions(+)
+ create mode 100644 "_00\353\263\200\354\210\230/Test02.java"
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git push -f origin main
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (8/8), 1.00 KiB | 1.00 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KimTrLab/JavaTutorial.git
+ + d17c614...4cadeae main -> main (forced update)
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git add *
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git commit -n '00자료형 jpg upload'
+error: pathspec '00자료형 jpg upload' did not match any file(s) known to git
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git commit -m '00자료형 jpg upload'
+[main aa5f257] 00자료형 jpg upload
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 "_00\353\263\200\354\210\230/java\354\236\220\353\243\214\355\230\225.png"
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$ git push -f origin main
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 26.88 KiB | 8.96 MiB/s, done.
+Total 12 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KimTrLab/JavaTutorial.git
+ + 678f548...aa5f257 main -> main (forced update)
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/javatutorial/src (main)
+$

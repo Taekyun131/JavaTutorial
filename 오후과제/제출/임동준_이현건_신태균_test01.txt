@@ -1,0 +1,49 @@
+package testpm;
+
+public class test01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("메모장 프로그램");
+			String title="[나의 점심]";
+			String content="[오늘은 자장면]";
+		System.out.println("제목: "+title+" "+"내용: "+content);
+			title="[점심메뉴]";
+		System.out.println(title);
+			int view=0;
+			content="[짬뽕도 먹음]";
+			view=10;
+		System.out.println("제목: "+title+" "+"내용: "+content+" "+"조회수: "+view);
+		
+//		lvup1
+		content+="[탕수육도 먹음]";
+		System.out.println(content);
+		
+//		lvup2
+//		문제1
+		int point=80;
+		System.out.println("문제 2-1 답: "+point);
+		
+//		문제2
+		
+		double x=10, y=4;
+		double z=x/y;
+		System.out.println("문제 2-2 답:"+z);
+		
+//		문제3
+		String name=null;
+		name="홍길동";
+		System.out.println("문제 2-3 답: "+name+"님");
+		
+//		문제4
+		int eng=90, math=87, com=100;
+		double avg=(eng+math+com)/3.0;
+		System.out.println("문제 2-4 답: "+avg);
+		
+//		lvup3
+		int a=10;
+		System.out.println("문제 3 답: "+(a%3==0));
+		
+	}
+
+}
