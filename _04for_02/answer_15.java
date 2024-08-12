@@ -16,10 +16,11 @@ public class answer_15 {
 				bT=ttt.charAt(i);
 				cnt=1;
 			}
-			if(i==ttt.length()-1) {
-				resultZip=resultZip+bT+cnt;
-			}
+//			if(i==ttt.length()-1) {
+//				resultZip=resultZip+bT+cnt;
+//			}
 		}
+		resultZip=resultZip+bT+cnt;
 		System.out.println(resultZip);
 	}
 
