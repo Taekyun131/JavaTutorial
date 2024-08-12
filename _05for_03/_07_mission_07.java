@@ -16,13 +16,16 @@ public class _07_mission_07 {
 				a[i+1]=a[6];
 				a[6]=0;
 			}
-			System.out.print(a[0]);
-			System.out.print(a[1]);
-			System.out.print(a[2]);
-			System.out.print(a[3]);
-			System.out.print(a[4]);
-			System.out.print(a[5]);
-			System.out.println();
+			System.out.println(a[0]+"/"+a[1]+"/"+a[2]+"/"+a[3]+"/"+a[4]+"/"+a[5]);
 		}
+//		for(int i=0;i<a.length-1;i++) {
+//			if(a[i]>a[i+1]) {
+//				a[6]=a[i];
+//				a[i]=a[i+1];
+//				a[i+1]=a[6];
+//				a[6]=0;
+//				}
+//		}
+			
 	}
 }
