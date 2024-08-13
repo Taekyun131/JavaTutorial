@@ -14,7 +14,7 @@ public class _13_mission_13 {
 		
 		String a = "6/4/3/2/5/1/4/5/6/7/8/9/1/2/3/4/5/6";
 		int []count=new int [10];
-		for(int i=0;i<a.length();i+=2) {
+		for(int i=0;i<a.length();i++) {
 			char b=a.charAt(i);
 			if(b=='0') {
 				count[0]++;
@@ -34,7 +34,7 @@ public class _13_mission_13 {
 				count[7]++;
 			}else if(b=='8') {
 				count[8]++;
-			}else {
+			}else if(b=='9'){
 				count[9]++;
 			}
 		

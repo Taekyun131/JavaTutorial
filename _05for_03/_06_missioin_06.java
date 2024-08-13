@@ -8,35 +8,25 @@ public class _06_missioin_06 {
 		String a="23-56+45*2-56";//-32
 		String c="";
 		int d=0;
-		int sum=0;
+		int result=0;
 		for(int i=0;i<a.length();i++) {
 			char b=a.charAt(i);
-			if((int)b>=48&&(int)b<=57) {
-				c +=b;
-				
-			}else {
-				d=Integer.parseInt(c);
-				sum+=d;
-				c=" ";
-				sum+=b;
-			}
-			if(i==a.length()-1) {
+			if(b>=48&&b<=57) {
 				c+=b;
+			}else if(b==45){
 				d=Integer.parseInt(c);
-				sum+=d;
+				result+=d;
+				
+				c="";
+			}else if(b==43) {
+				
+			}else if(b==42) {
+				
 			}
-		}
-		System.out.println(d);
-					
-			
-		
-		
-			
-		
-			
-			
-			
+			System.out.println(d);
+			System.out.println(result);
 			
 		}
-
+	System.out.println();
+	}
 }
