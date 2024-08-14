@@ -11,6 +11,11 @@ public class _00_mission_00 {
 		int k=in.nextInt();
 		in.nextLine();
 		System.out.println(k);
+		if(k%2==0) {
+			System.out.println("짝수입니다.");
+		}else {
+			System.out.println("홀수입니다.");
+		}
 	}
 
 }

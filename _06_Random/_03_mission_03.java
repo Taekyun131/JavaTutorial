@@ -12,10 +12,10 @@ public class _03_mission_03 {
 		for(;true;) {
 			int random=r.nextInt(100)+1;
 			if(random%7==0) {
-				System.out.println(random+"행운의 숫자");
+				System.out.println(random+" 행운의 숫자");
 				break;
 			}else {
-				System.out.println(random+"조심해야한는 숫자");
+				System.out.println(random+" 조심해야한는 숫자");
 			}
 			
 		}
