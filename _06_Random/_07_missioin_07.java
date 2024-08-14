@@ -11,9 +11,15 @@ public class _07_missioin_07 {
 		다음 사람이 작업장을 사용한다. (만약,다음 사람의 업무가 종료 되었다면, 그 다음 사람이 사용이 가능하다)
 		0번 부터 1 2 3 4 5번 순으로 작업장을 사용한다면
 		실제 작업장을 사용한 사람의 기록을 순서대로 출력하시오.*/
-		
+		int maxNum=0;
 		int []jobTime ={40,32,4,16,5,8};
-		for(;jobTime[0]!=0;) {
+		for(int i=0;i<jobTime.length;i++) {
+			if(jobTime[i]>maxNum) {
+				maxNum=jobTime[i];
+			}
+		}
+		
+		for(;maxNum!=0;) {
 			for(int i=0;i<jobTime.length;i++) {
 				if(jobTime[i]>0) {
 					jobTime[i]-=4;
