@@ -32,7 +32,7 @@ public class _08_mission_08 {
 					if (i == lotto.length - 1) { 
 						System.out.println("보너스 : " + lotto[i]);
 					} else {
-						System.out.println(lotto[i]);
+						System.out.println("로또 번호:"+lotto[i]);
 					}
 				}
 				break;
