@@ -11,7 +11,7 @@ public class _08_mission_08 {
 		int[] pang={1,0,0,0,2,3,4,4,6,2,2,2,2,5};
 		int count=1;
 		int maxCount=0;
-		for(int i=0;i<pang.length;i++) {
+		for(int i=0;i<pang.length-1;i++) {
 			for(int j=i+1;j<pang.length;j++) {
 				if(pang[i]==pang[j]) {
 					count++;
@@ -24,8 +24,6 @@ public class _08_mission_08 {
 						maxCount=count;
 						System.out.println("번호: "+pang[i]+" "+"개수: "
 						+maxCount+"개 "+"시작위치: "+i);
-					}else {
-						maxCount=0;
 					}
 				}
 			}

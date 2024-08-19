@@ -9,7 +9,7 @@ public class _09_mission_09 {
 		int count=1;
 		int maxCount=0;
 		int maxIndex=0;
-		for(int i=0;i<ttt.length();i++) {
+		for(int i=0;i<ttt.length()-1;i++) {
 			for(int j=i+1;j<ttt.length();j++) {
 				if(ttt.charAt(i)==ttt.charAt(j)) {
 					count++;
@@ -17,15 +17,18 @@ public class _09_mission_09 {
 					count=1;
 					break;
 				}
-				if(count>maxCount) {
-					maxCount=count;
-					maxIndex=i;
-					count=1;
+				if(i<ttt.length()-3) {
+					if(count>maxCount) {
+						maxCount=count;
+						maxIndex=i;
+						count=1;
+					}
 				}
+					
 			}
-			System.out.println(maxCount);
-			
 		}
+			System.out.println(ttt.charAt(maxIndex)+" 터널길이: "+maxCount);
 	}
-
 }
+
+
