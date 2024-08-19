@@ -10,7 +10,7 @@ public class _00_mission_00 {
 		Scanner in=new Scanner(System.in);
 		int k=in.nextInt();
 		in.nextLine();
-		System.out.println(k);
+//		System.out.println(k);
 		if(k%2==0) {
 			System.out.println("짝수입니다.");
 		}else {

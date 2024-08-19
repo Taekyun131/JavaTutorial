@@ -11,7 +11,6 @@ public class _06_mission_06 {
 		오늘의 추천 로또 번호 하나를 출력하시오.  
 		만약 로또 번호가 같은 횟수로 나왔을 경우에는 큰 숫자가 우선한다. */
 		int [] count=new int[46];
-		int maxLotto=0;
 		for(int i=0;i<10000;i++) {
 			Random r=new Random();
 			int random=r.nextInt(45)+1;
@@ -20,10 +19,9 @@ public class _06_mission_06 {
 		for(int i=0;i<count.length;i++) {
 			if(count[i]>=count[0]) {
 				count[0]=count[i];
-				maxLotto=i;
 			}
 		}
-		System.out.println(maxLotto);
+		System.out.println(count[0]);
 //		for(int i=0;i<count.length;i++) {
 //			System.out.println(i+"/"+count[i]);
 //		}

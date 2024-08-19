@@ -13,12 +13,13 @@ public class _07_missioin_07 {
 		실제 작업장을 사용한 사람의 기록을 순서대로 출력하시오.*/
 		int maxNum=0;
 		int []jobTime ={40,32,4,16,5,8};
+		//작업량 가장 많은 사람 찾기
 		for(int i=0;i<jobTime.length;i++) {
 			if(jobTime[i]>maxNum) {
 				maxNum=jobTime[i];
 			}
 		}
-		
+		//작업시작
 		for(;maxNum!=0;) {
 			for(int i=0;i<jobTime.length;i++) {
 				if(jobTime[i]>0) {

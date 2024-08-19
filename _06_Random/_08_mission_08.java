@@ -10,14 +10,13 @@ public class _08_mission_08 {
 		범위 오류라고 출력하고 다시 번호를 입력할 수 있도록 수정하세요.*/
 		
 		int[] lotto = new int[6];
-		// 키보드로 부터 입력받기 위한 객체 만들기.
-		Scanner in = new Scanner(System.in); // ctrl shift o
-		// 0번째 번호부터 로또 번호 입력받기
+		Scanner in = new Scanner(System.in);
 		for(;true;) {
+			//로또번호 입력받기
 			for (int i = 0; i < lotto.length; i++) {
 				System.out.println((i + 1) + "번 입력하세요");
-				int k = in.nextInt();  // nextInt는 키보드로 숫자만 가져온다.
-				in.nextLine();  // 버퍼 지우기
+				int k = in.nextInt(); 
+				in.nextLine();  
 				if(k<1||k>45) {
 					k=0;
 					System.out.println("범위오류!!번호를 다시 입력하세요(1~45)");
@@ -27,6 +26,7 @@ public class _08_mission_08 {
 					continue;
 				}
 			}
+			//로또 번호 출력하기
 			if(lotto[5]!=0) {
 				for (int i = 0; i < lotto.length; i++) {
 					if (i == lotto.length - 1) { 
