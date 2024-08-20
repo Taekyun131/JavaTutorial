@@ -9,9 +9,10 @@ public class _03_mission_03 {
 		int facto=1;
 		for(int i=1;i<=10;i++) {
 			facto=1;
-			for(int j=i;j>0;j--) {
+			for(int j=1;j<=i;j++) {
 				facto*=j;
 			}
+			System.out.println(facto);
 			sum+=facto;
 		}
 		System.out.println(sum);
