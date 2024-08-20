@@ -1,6 +1,6 @@
 package _07_2for;
 
-public class _08_mission_08 {
+public class _08_mission_08_2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -10,28 +10,29 @@ public class _08_mission_08 {
 		-이중 for  사용*/
 		
 		int[] pang={1,0,0,0,2,3,4,4,6,2,2,2,2,5};
-		int count=1;
-		int maxCount=0;
-		int maxIndex=0;
-		for(int i=0;i<pang.length-1;i++) {
-			for(int j=i+1;j<pang.length;j++) {
-				if(pang[i]==pang[j]) {
+		int count=0;
+		int nowNum=0;
+		int targetNum=0;
+		int start=0;
+		for(int i=0;i<pang.length;i++) {
+			nowNum=pang[i];
+			count=0;
+			for(int j=i;j<pang.length;j++) {
+				if(pang[j]==nowNum) {
 					count++;
 				}else {
-					i=j;
-					count=1;
 					break;
 				}
-				if(count>=3) {
-					if(count>maxCount) {
-						maxCount=count;
-						maxIndex=i;
-					}
-				}
 			}
+			if(count>=3) {
+				targetNum=nowNum;
+				start=i;
+				System.out.println("제거대상: "+targetNum+" 갯수: "+count+" 시작위치: "+start);
+			}
+			i=i+count-1;
 		}
-		System.out.println("번호: "+pang[maxIndex]+" "+"개수: "
-				+maxCount+"개 "+"시작위치: "+maxIndex);
 	}
-
 }
+		
+
+

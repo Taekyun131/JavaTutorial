@@ -1,0 +1,20 @@
+-이중 for
+for? or 이중 for?? 
+1) 구조
+	for(int i ~){
+		for(int j ~){
+		
+		}
+	} 
+2) i의 변화와 j의 변화를 같이 생각 i=0; j=0,1,2  i=1; j=0,1,2 ... >> i와 j 분석
+3) i와 j를 무엇으로 볼 것인가? >> i와 j 정의
+
+tip)
+-i에 관한 수식을 통해 j값의 조건을 결정할 수 있다.
+
+day09 mission 09
+String a ="aabbbcccaaaaddbbbaaaaa";
+1) a 중 가장 긴 a?? >> i는 a문자열의 index
+2) 변수 maxCnt: a 길이중 가장 긴 길이
+	cnt: 현재의 a 길이
+
