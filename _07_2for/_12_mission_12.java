@@ -12,27 +12,29 @@ public class _12_mission_12 {
 //		00***
 //		000*
 		//for문 2개만 사용하기 if문은 갯수 상관없음.
-		
+		int k=0;
 		for(int i=0;i<7;i++) {
 			if(i<4) {
-				for(int j=0;j<4+i;j++) {
+				k=4+i;
+			}else {
+				k=10-i;
+			}
+			for(int j=0;j<k;j++) {
+				if(i<4) {
 					if(j>=3-i) {
 						System.out.print("*");
 					}else {
 						System.out.print(0);
 					}
-				}
-				System.out.println();
-			}else {
-				for(int j=0;j<10-i;j++) {
+				}else {
 					if(j>i-4) {
 						System.out.print("*");
 					}else {
 						System.out.print(0);
 					}
 				}
-				System.out.println();
 			}
+			System.out.println();
 		}
 	}
 		
