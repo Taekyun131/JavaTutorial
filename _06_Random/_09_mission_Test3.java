@@ -12,7 +12,15 @@ public class _09_mission_Test3 {
 		단어는 딱 한 번만 출력할 수 있으며 모든 단어가 모두 출력되어야 한다.*/
 		String[] word ={"apple","banana","car","dog","cat","computer"};
 		Random r=new Random();
-		
+		for(int i=0;i<word.length;i++) {
+			int index=r.nextInt(word.length);
+			if(word[index]!="0") {
+				System.out.println(word[index]);
+				word[index]="0";
+			}else {
+				i--;
+			}
+		}
 		
 		
 	}
