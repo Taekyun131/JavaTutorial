@@ -31,6 +31,7 @@ public class _01_Test {
 			}
 			
 		}
+		in.close();
 	}
 
 }

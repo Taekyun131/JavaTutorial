@@ -12,7 +12,6 @@ public class _03_mission_03 {
 			for(int j=1;j<=i;j++) {
 				facto*=j;
 			}
-			System.out.println(facto);
 			sum+=facto;
 		}
 		System.out.println(sum);

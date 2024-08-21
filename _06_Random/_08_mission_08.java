@@ -26,6 +26,7 @@ public class _08_mission_08 {
 					continue;
 				}
 			}
+			in.close();
 			//로또 번호 출력하기
 			if(lotto[5]!=0) {
 				for (int i = 0; i < lotto.length; i++) {
@@ -38,7 +39,6 @@ public class _08_mission_08 {
 				break;
 			}
 		}
-		
 		
 	}
 

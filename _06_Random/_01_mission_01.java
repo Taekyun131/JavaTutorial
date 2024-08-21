@@ -14,6 +14,7 @@ public class _01_mission_01 {
 		In.nextLine();
 		sum=k1+k2;
 		System.out.println(sum);
+		In.close();
 	}
 
 }

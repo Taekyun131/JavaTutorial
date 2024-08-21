@@ -16,7 +16,7 @@ public class _00_mission_00 {
 		}else {
 			System.out.println("홀수입니다.");
 		}
-		
+		in.close();
 	}
 
 }

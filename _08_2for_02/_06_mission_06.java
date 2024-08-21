@@ -21,6 +21,7 @@ public class _06_mission_06 {
 			}
 		}
 		System.out.println("ID에 포함된 특수문자: "+count+"개");
+		in.close();
 	}
 
 }
