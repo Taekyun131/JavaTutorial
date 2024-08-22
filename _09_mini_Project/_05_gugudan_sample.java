@@ -32,7 +32,7 @@ public class _05_gugudan_sample {
 						System.out.println("정답!!");
 						System.out.println();
 						point+=50;
-						
+						end=System.currentTimeMillis()+5000;
 					}else {
 						System.out.println("오답!!");
 						System.out.println();

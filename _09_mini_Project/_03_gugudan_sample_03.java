@@ -51,7 +51,7 @@ public class _03_gugudan_sample_03 {
 				var1=r.nextInt(9)+1;
 				var2=r.nextInt(9)+1;
 				var3=r.nextInt(9)+1;
-				System.out.println(var1+"x"+var2+"x"+"x"+var3+"=?");
+				System.out.println(var1+"x"+var2+"x"+var3+"=?");
 				int result2=var1*var2*var3;
 				int type=in.nextInt();
 				if(result2==type) {
