@@ -1,0 +1,90 @@
+package _0821_miniproject;
+import java.util.Scanner;
+import java.awt.Button;
+import java.util.Random;
+public class _0_jinja_ {
+    public static final String black    = "\u001B[30m" ;
+    public static final String red      = "\u001B[31m" ;
+    public static final String green    = "\u001B[32m" ;
+    public static final String yellow   = "\u001B[33m" ;
+    public static final String blue     = "\u001B[34m" ;
+    public static final String purple   = "\u001B[35m" ;
+    public static final String cyan     = "\u001B[36m" ;
+    public static final String white     = "\u001B[37m" ;
+    public static final String exit     = "\u001B[0m" ;
+	public static void main(String[] args) {	
+		   	int x=0; // 랜덤으로 생성 할 숫자 
+		    int y=0; //랜덤으로 생성 할숫자
+		    int z=0;  // 사람이 적을 답
+		    int answer; // 계산된 답
+		    int i=0; //  추가문제로 랜덤 생성할숫자
+		    int score=0; // 점수
+		    Scanner in = new Scanner(System.in); // 정답을 받아냄
+		    Random random = new Random(); // 랜덤숫자 생성
+		    		System.out.println(green+" 구구단 게임을 시작합니다*~*");
+		      for(int e=0; e <5; e++) {
+		            x = random.nextInt(9)+1;
+		            y = random.nextInt(9)+1;
+		            i = random.nextInt(9)+1;
+		            answer = x*y; // 점수를 저장하는 타입
+		            System.out.println(purple+x+"X"+y+"= ?");
+		            z = in.nextInt(); // 사람이 적은 정답 저장하고
+		            if(z == answer) { 
+		            System.out.println(blue+"정답입니다!👩🏻‍🦳ྀ"+exit);
+		                score+=20;
+		        }else{
+		                System.out.println(red+"오답입니다!👱🏻‍♂ྀི"+exit);
+		            }
+		        }if(score==100){
+		            System.out.println(" 굿 너 좀 치네 ㅎ"); // 정답인경우에
+		        }else {
+		            System.out.println("최종점수는 100점 만점 중 "+score+" 점입니다."
+		            		+ "\n아쉽게만점을 받지 못했습니다.\n"
+		                    + "             	너 구구단몰라 ?? 분발하세요 !ㅜㅗㅜ !");
+		        }if(score<=100) {
+		        	System.out.println(" "
+		        			+ "레벨업 !!  물리과세요 ?? "
+		        			
+		            		+ "░░░░░░░░░░░░░░░░░░░░░░░░░░\r\n"
+		            		+ "\r\n"
+		            		+ "░░░░░█▀▀░█▀█░█▀▀░█░█░░░░░░\r\n"
+		            		+ "\r\n"
+		            		+ "░░░░░█▀▀░█▀█░▀▀█░▀█▀░░░░░░\r\n"
+		            		+ "\r\n"
+		            		+ "░░░░░▀▀▀░▀░▀░▀▀▀░░▀░░░░░░░\r\n"
+		            		+ "\r\n"
+		            		+ "░░░░░░░░░░░░░░░░░░░░░░░░░░\r\n"
+		            		+ "\r\n"
+		            		+ "⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞"
+		        			+ "3번의 곱셈까지 도전해보세요~");
+		        	// 레벨업
+		        	
+		        	answer= x*y*i;
+		            System.out.println(purple+x+"X"+y+"X"+i+"= ?");
+		            z= in.nextInt();
+		            if(z == answer) { 
+		            System.out.println(blue+"정답입니다!👩🏻‍🦳ྀ"+exit);
+		                score+=20;
+		        }else{
+		            System.out.println(red+"오답입니다!👱🏻‍♂ྀི"+exit);
+		            }
+		        }if(score==100){
+		            System.out.println( yellow+" 어렵습니다 !!"); // 틀리거나 맞춘경우
+		        }else {
+		            System.out.println(cyan+"최종점수는 "+score+" 점입니다.—̳͟͞͞💁🏽‍♂️ᩚ"+
+		            		"         	※고생하셨습니다※ꉂ🤭︎‪💕 "	);
+		            
+	
+		            
+		            
+		            
+		            // 아이디 출력
+		           if(score>=101) {
+		        	 System.out.println(" 기록을 남겨서 구구단 최고의 플레이어가 되어 보세요!!");
+		           }else {
+		        	 System.out.println();
+		        	   
+		           }
+		    }
+	}	
+	}
