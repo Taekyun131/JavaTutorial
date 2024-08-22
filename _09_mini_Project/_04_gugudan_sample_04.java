@@ -24,18 +24,16 @@ public class _04_gugudan_sample_04 {
 				if(System.currentTimeMillis()>end) {
 					break;
 				}
-				var1=r.nextInt(9)+1;
-				var2=r.nextInt(9)+1;
+				var1=r.nextInt(9)+1;//변수 1-한자리수
+				var2=r.nextInt(9)+1;//변수 2-한자리수 
 				System.out.println(var1+"x"+var2+"=?");
-				int type=in.nextInt();
-				int result=var1*var2;
-				if(result==type) {
-					end=System.currentTimeMillis()+5000;
+				int type=in.nextInt(); //키보드로 정답 입력받기
+				int result=var1*var2;  //구구단 정답
+				if(result==type) { //정답 시 
 					System.out.println("정답!!");
 					System.out.println();
 					point+=50;
-					
-				}else {
+				}else { //오답 시 
 					System.out.println("오답!!");
 					System.out.println();
 					point-=20;

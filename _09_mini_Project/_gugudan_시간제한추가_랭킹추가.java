@@ -1,20 +1,11 @@
 package _09_mini_Project;
 
-import java.util.Random;
 import java.util.Scanner;
-import java.util.Timer;
+import java.util.Arrays;
+import java.util.Random;
 
 public class _gugudan_시간제한추가_랭킹추가 {
-		//색상 추가
-	 	public static final String black    = "\u001B[30m" ;
-	    public static final String red      = "\u001B[31m" ;
-	    public static final String green    = "\u001B[32m" ;
-	    public static final String yellow   = "\u001B[33m" ;
-	    public static final String blue     = "\u001B[34m" ;
-	    public static final String purple   = "\u001B[35m" ;
-	    public static final String cyan     = "\u001B[36m" ;
-	    public static final String white     = "\u001B[37m" ;
-	    public static final String exit     = "\u001B[0m" ;
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int x; // 구구단의 변수
@@ -24,7 +15,6 @@ public class _gugudan_시간제한추가_랭킹추가 {
 		int answer = 0; // 컴퓨터 답
 		int score = 0; // 사용자의 점수
 		boolean play, retry; // 진행과 재시작 여부 제어 변수
-		Timer timer=new Timer();
 		
 
 		Scanner in = new Scanner(System.in);
@@ -43,7 +33,7 @@ public class _gugudan_시간제한추가_랭킹추가 {
 				score = 0;
 				play = true;
 				System.out.println("구구단 게임을 실행합니다...");
-				System.out.println("⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞⎛⎝(•‿•)⎠⎞");
+				System.out.println();
 				System.out.println("아이디를 입력하세요...");
 				System.out.println();
 				ids[j] = in.nextLine();
@@ -52,10 +42,11 @@ public class _gugudan_시간제한추가_랭킹추가 {
 				// 구구단 7문제를 랜덤으로 생성한다.
 				while (play) {
 					long start1 = System.currentTimeMillis();
-					long end1 = start1 + 15 * 1000;
+					long end1 = start1 + 5 * 1000;
 					while (System.currentTimeMillis() < end1) {
 						for (int i = 0; i < 7; i++) {
 							if (System.currentTimeMillis() >= end1) {
+//								play = false;
 								System.out.println("시간초과");
 								break;
 							}
@@ -67,11 +58,11 @@ public class _gugudan_시간제한추가_랭킹추가 {
 							a = in.nextInt();
 							System.out.println("[" + x * y + "]");
 							if (a == answer) {
-								System.out.println("정답!! ⎝ᑒ⎠⎝ᑒ⎠⎝ᑒ⎠");
+								System.out.println("정답");
 								score += 30;
 								System.out.println("점수 : " + score);
 							} else {
-								System.out.println("오답 ☠☠");
+								System.out.println("오답");
 								score -= 15;
 								System.out.println("점수 : " + score);
 							}
@@ -90,6 +81,7 @@ public class _gugudan_시간제한추가_랭킹추가 {
 						while (System.currentTimeMillis() < end2) {
 							for (int i = 0; i < 7; i++) {
 								if (System.currentTimeMillis() >= end2) {
+									play = false;
 									System.out.println("시간초과");
 									break;
 								}
@@ -123,6 +115,7 @@ public class _gugudan_시간제한추가_랭킹추가 {
 							long end3=start3+25*1000;
 							while(System.currentTimeMillis()<end3) {
 								if(System.currentTimeMillis()>end3) {
+									play=false;
 									System.out.println("시간초과");
 									break;
 								}

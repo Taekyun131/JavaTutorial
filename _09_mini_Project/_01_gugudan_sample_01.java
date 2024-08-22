@@ -17,7 +17,7 @@ public class _01_gugudan_sample_01 {
 		System.out.println(var1+"x"+var2);
 		System.out.println("결과: "+result);
 		Scanner in=new Scanner(System.in);
-		int type=in.nextInt();
+		int type=in.nextInt(); 
 		if(result==type) {
 			System.out.println("정답");
 			point+=50;

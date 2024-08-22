@@ -1,4 +1,4 @@
-package _미니프로젝트;
+package _09_mini_Project;
 
 import java.util.Scanner;
 import java.util.Arrays;
