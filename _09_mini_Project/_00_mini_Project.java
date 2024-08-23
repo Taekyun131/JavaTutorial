@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 
-public class _00_미니프로젝트 {
+public class _00_mini_Project {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

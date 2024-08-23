@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 
-public class _gugudan_시간제한추가_랭킹추가 {
+public class _gugudan_time_ranking {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
