@@ -27,8 +27,6 @@ public class _gugudan_final {
 		int score = 0; // 사용자의 점수
 		boolean play, retry; // 진행과 재시작 여부 제어 변수
 		Timer timer1=new Timer();
-		
-
 		Scanner in = new Scanner(System.in);
 		Random in2 = new Random();
 
