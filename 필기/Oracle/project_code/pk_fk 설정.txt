@@ -1,0 +1,29 @@
+//pk_fk 설정
+
+//고객 테이블 id 기본키 설정
+alter table client 
+add primary key(id);
+
+//선택 테이블 id 외래키 설정
+alter table select1
+add constraint fk_select1_id foreign key(id) references client(id)
+on delete set null;
+
+//리뷰 테이블 review_num 기본키설정
+alter table review
+add primary key(review_num);
+
+//리뷰 테이블 id 외래키 설정
+alter table renview 
+add constraint fk_review_id foreign key(id) references client(id)
+on delete cascade;
+
+//마이페이지 테이블 id 외래키 설정
+alter table mypage
+add constraint fk_mypage_id foreign key(id) references client(id)
+on delete set null;
+
+//마이페이지 테이블 review_num 외래키 설정
+alter table mypage
+add constraint fk_mypage_review_num foreign key(review_num) references (review_num)
+on delete set null;

@@ -30,13 +30,13 @@ insert into travel values ('국내','경상도','부산해운대',5.0);
 insert into travel values ('국내','제주도','한라산',5.0);
 
 
-insert into travel values ('해외','일본','도쿄',5.0);
-insert into travel values ('해외','중국','베이징',5.0);
-insert into travel values ('해외','태국','방콕',5.0);
-insert into travel values ('해외','프랑스','파리',5.0);
-insert into travel values ('해외','이탈리아','로마',5.0);
-insert into travel values ('해외','브라질','아마존',5.0);
+insert into travel values ('해외','일본','도쿄',4.1);
+insert into travel values ('해외','중국','베이징',2.9);
+insert into travel values ('해외','태국','방콕',3.6);
+insert into travel values ('해외','프랑스','파리',3.2);
+insert into travel values ('해외','이탈리아','로마',4.6);
+insert into travel values ('해외','브라질','아마존',2.5);
 insert into travel values ('해외','미국','로스엔젤레스',5.0);
-insert into travel values ('해외','캐나다','벤쿠버',5.0);
+insert into travel values ('해외','캐나다','벤쿠버',4.2);
 
 
