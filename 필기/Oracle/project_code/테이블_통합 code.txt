@@ -15,7 +15,7 @@ insert into client values ('f','원재');
 //여행 테이블 생성
 create table travel (
 theme varchar2(6) check(Theme in ('국내','해외')),
-area varchar2(10) not null,
+area varchar2(10) unique,
 spot varchar2(20) not null,
 rating number(2,1) check (Rating between 1 and 5)
 );
@@ -41,17 +41,17 @@ insert into travel values ('해외','캐나다','벤쿠버',4.2);
 //리뷰 테이블 생성
 create table review(
 review_num number(3),
-id varchar2(8),
-dest varchar2(10),
+id varchar2(8) not null,
+area varchar2(10),
 content varchar2(50),
-reg_date date,
+reg_date date not null,
 rating number(2,1) check ( rating between 1 and 5)
 );
 
 insert into review values( 1,'a','인천','너무 좋아요','24/06/15',3.5);
 insert into review values( 2,'b','서울','별로였어요','24/08/21',2.9);
-insert into review values( 3,'c','파리','재밌는 여행','24/07/10',4.1);
-insert into review values( 4,'d','베이징','그냥 그래요','24/01/09',3.6);
+insert into review values( 3,'c','프랑스','재밌는 여행','24/07/10',4.1);
+insert into review values( 4,'d','중국','그냥 그래요','24/01/09',3.6);
 insert into review values( 5,'e','태국','최악이에요','24/03/30',1.7);
 
 
@@ -59,15 +59,15 @@ insert into review values( 5,'e','태국','최악이에요','24/03/30',1.7);
 create table mypage(
 id varchar2(8),
 review_num number(3),
-dest varchar2(10),
+area varchar2(10),
 point number(6,2)
 );
 	
-insert into mypage values('a',1,'서울',1500.30);
-insert into mypage values('b',2,'경기',1240.50);
-insert into mypage values('c',3,'강원',500.35);
-insert into mypage values('d',4,'춘천',850.50);
-insert into mypage values('e',5,'대전',2100.25);
+insert into mypage values('a',1,'인천',1500.30);
+insert into mypage values('b',2,'서울',1240.50);
+insert into mypage values('c',3,'프랑스',500.35);
+insert into mypage values('d',4,'중국',850.50);
+insert into mypage values('e',5,'태국',2100.25);
 
 //선택 테이블 생성
 create table select1 (
@@ -76,8 +76,8 @@ area varchar2(10) not null,
 date1 date
 );	
 
-insert into select1 values('a','서울','24/04/21');
-insert into select1 values('b','경기','24/06/30');
-insert into select1 values('c','강원','24/02/25');
-insert into select1 values('d','춘천','24/07/24');
-insert into select1 values('e','대전','24/05/05');
+insert into select1 values('a','인천','24/04/21');
+insert into select1 values('b','서울','24/06/30');
+insert into select1 values('c','파리','24/02/25');
+insert into select1 values('d','베이징','24/07/24');
+insert into select1 values('e','태국','24/05/05');

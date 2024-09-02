@@ -4,9 +4,15 @@
 alter table client 
 add primary key(id);
 
+
 //선택 테이블 id 외래키 설정
 alter table select1
 add constraint fk_select1_id foreign key(id) references client(id)
+on delete set null;
+
+//선택 테이블 여행지역 외래키 설정
+alter table select1
+add constraint fk_select1_area foreign key(area) references travel (area)
 on delete set null;
 
 //리뷰 테이블 review_num 기본키설정
@@ -14,9 +20,14 @@ alter table review
 add primary key(review_num);
 
 //리뷰 테이블 id 외래키 설정
-alter table renview 
+alter table review 
 add constraint fk_review_id foreign key(id) references client(id)
 on delete cascade;
+
+//리뷰 테이블 area 외래키 설정
+alter table review
+add constraint fk_review_area foreign key(area) references travel(area)
+on delete set null;
 
 //마이페이지 테이블 id 외래키 설정
 alter table mypage
@@ -25,5 +36,6 @@ on delete set null;
 
 //마이페이지 테이블 review_num 외래키 설정
 alter table mypage
-add constraint fk_mypage_review_num foreign key(review_num) references (review_num)
+add constraint fk_mypage_review_num foreign key(review_num) references review (review_num)
 on delete set null;
+
