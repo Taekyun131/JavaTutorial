@@ -177,7 +177,7 @@ when grade=1 then concat(grade,'*')
 when grade=2 then concat(grade,'%')
 when grade=3 then concat(grade,'#')
 when grade=4 then concat(grade,'!')
-end
+end as gradeº¸Á¤
 from users;
 
 
