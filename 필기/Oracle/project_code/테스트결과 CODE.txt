@@ -1,7 +1,0 @@
-select area from travel where theme='해외';
-select * from select1 where id='b';
-select * from travel where theme='국내';
-select * from travel where rating>=3.0;
-
-delete??
-update??
