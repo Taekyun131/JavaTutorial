@@ -156,7 +156,7 @@ from users;
 
 /*27. 이름, 포인트, 학년, 생년월일, 성별을 추가한다. 성별은 생년월일로 판단하며 마지막 숫자가1이면 남
     2이면 여라고 표시한다.*/
-select name,point,grade,jumin,decode(substrb(jumin,-1,1),1,'남',2,'여')as 성별
+select name,point,grade,jumin,decode(substr(jumin,-1,1),1,'남',2,'여')as 성별
 from users;
 
 /*28. 모든 사람의 이름과 주민번호를 출력하고 나이를 출력하시오.*/
@@ -168,7 +168,6 @@ from users;
    마스킹 방법은 첫글자는 그대로 나머지는 *, *는 갯수는 이름의 길이보다 하나 적다.
    예) abcdef > a*****    */
 
-
 /* 30. 모든 사람의 정보를 출력하시오.
     1학년은 이름뒤에 *, 2학년은 이름 뒤에 %, 3학년은 이름뒤에 #, 4학년은 이름뒤에 !를
    추가하여 출력하시오.*/
@@ -179,5 +178,6 @@ when grade=3 then concat(grade,'#')
 when grade=4 then concat(grade,'!')
 end as grade보정
 from users;
+
 
 
