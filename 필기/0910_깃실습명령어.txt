@@ -1,0 +1,100 @@
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 ~
+$ pwd                                 현재 위치 확인
+/c/Users/human-teacher
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 ~
+$ cd d:  드라이드 이동
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d
+$ cd data  폴더이동
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data
+$ ls  폴더 내의 정보(폴더와 파일) 확인
+ 220727/                  230828_자료실--/   Eclipse_web/   wordata/
+'220727 과정형 교사용'/   240129/            KinfolkSoft/   zzz_src/
+ 230125/                  240129_tr/         bak/           과정운영/
+'230125 교사용'/          240129교사용/      data/          교사김은수/
+ 230125_Study/            240805/            mySrc/         바탕화면0622/
+ 230828/                  240805_tr/         src/
+ 230828_교사/             240805_교사용/     tmp/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data
+$ cd s40805_tr  폴더 이동인데 이런 폴더가 없다고 에러남
+bash: cd: s40805_tr: No such file or directory
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data
+$ cd 240805_tr  폴더 이동 에러가 없으니 성공이네
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr
+$ ls   현재 폴대 내의 정보 확인.. 2개의 디렉토리가 있네.. 
+DB_tools/  java_src/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr
+$ cd java_src  디렉토리 이동, 위에서는 폴더라고 하고 갑자기 디렉토리
+                 같은 말이다. 
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src
+$ ls   폴대 내의 내용확인
+JavaStudy/  JavaTu2/  JavaTutorial/  aaaa/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src
+$ cd JavaTu2  폴더 이동
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2
+$ ls    폴더 내의 정보 확인
+bin/  src/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2
+$ cd src  폴더 이동
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src
+$ pwd    폴더 위치 확인..ㅇ ㅕ기가 깃 형상관리 할 위치이군.. 좋아
+/d/data/240805_tr/java_src/JavaTu2/src
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src
+$ git init   로컬 리포지 토리 만들자.. 이러면 git폴더가 숨김폴더로 만들어 짐
+Initialized empty Git repository in D:/Data/240805_tr/java_src/JavaTu2/src/.git/
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git config --global user.name "kimtr"   // 로컬 리포지토리 환경설정
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git config --global user.email "nagneoo@naver.com"  // 환경설정
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git remote   // 원격 리포지토로 있는가>? 확인 없네
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git remote add orgin https://github.com/KimTrLab/JavaTutorial.git
+       // 원결 리포지토리 추가하자 이름은  orgin  이런 오타. 
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git remote  // 원격 리포지토리.. 확인 해보니 방금것이 등록 됨
+orgin
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git fetch    // 원격 레포지토리에 다운로드 될 파일이 있는지 확인용. 
+                 // 뭔가 있네.. 아 .. 일이 있구나. 
+remote: Enumerating objects: 290, done.
+remote: Counting objects: 100% (56/56), done.
+remote: Compressing objects: 100% (41/41), done.
+remote: Total 290 (delta 20), reused 48 (delta 13), pack-reused 234 (from 1)
+Receiving objects: 100% (290/290), 612.72 KiB | 14.59 MiB/s, done.
+Resolving deltas: 100% (97/97), done.
+From https://github.com/KimTrLab/JavaTutorial
+ * [new branch]      main       -> orgin/main
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git pull orgin main    // orgin리모트의 main브랜치를 pull받아옴
+From https://github.com/KimTrLab/JavaTutorial
+ * branch            main       -> FETCH_HEAD
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git branch main    // main브랙치 만듬. 어디에서? 로컬에서 리모트는 모르지
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (master)
+$ git checkout main  // 브랜치 이동..
+Switched to branch 'main'
+
+human-teacher@DESKTOP-4J9B8HB MINGW64 /d/data/240805_tr/java_src/JavaTu2/src (main)
+$
