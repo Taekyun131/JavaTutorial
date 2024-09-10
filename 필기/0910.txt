@@ -1,0 +1,16 @@
+--개발환경
+IDE tools(통합개발 툴): 이클립스, vscode(개발언어: html, js, css), 인텔리J, Spring 
+jdk version : 1.8버전 사용
+	jdk??>>개발에 필요한 도구..import
+	jre??>>소스실행 ..ctrl+f11
+	라이브러리??>>scanner, random...
+
+--이클립스 
+workspace 위치체크
+프로젝트 type: javaproject
+	이름: JavaTu2
+
+window>show view>여러 창들
+
+--git
+리포지토리: local, remote
