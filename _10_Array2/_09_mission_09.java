@@ -70,7 +70,6 @@ public class _09_mission_09 {
 				System.out.println("\t"+"정답");
 				for(int k=0;k<maxCount;k++) {
 					game[x][temp-(maxCount-k-1)]=-1;
-		
 					for(int i=0;i<game.length;i++) {
 						for(int j=0;j<game[0].length;j++) {
 							if(game[i][j]==-1) {
