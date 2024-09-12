@@ -62,38 +62,24 @@ public class _07_mission_05 {
 					a[k/4][j+k/4]=num;
 					num++;
 				}
-			}
-			else if(k%4==1) {
+			}else if(k%4==1) {
 				for(int i=0;i<a.length-(k+1)/2;i++) {
 					a[(k+3)/4+i][(17-k)/4]=num;
 					num++;
 				}
-			}
-			else if(k%4==2) {
+			}else if(k%4==2) {
 				for(int j=0;j<a[0].length-k/2;j++) {
 					a[(14-k)/4][a[0].length-j-(k+6)/4]=num;
 					num++;
 				}
-			}
-			else {
+			}else {
 				for(int i=0;i<a.length-(k+5)/4;i++) {
 					a[a.length-i-(k+5)/4][0]=num;
 					num++;
 				}
 			}
 		}
-		
-			
-		
-		
-		
-			
-		
-			
-		
-			
-		
-		
+
 		
 		//출력
 		for(int i=0;i<a.length;i++) {
