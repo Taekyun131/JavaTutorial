@@ -31,4 +31,13 @@ public class _01_mission_tetris_01 {
 	}
 }
 
+/* 분석
+ * tempArr 모양을 2차원배열로 생각 
+ * i를 배열의 행, j를 배열의 열로 생각
+ * 2중for문을 사용해 배열을 순회
+ * tempArr(0,0)부터 tempArr(2,2)까지 시계방향으로 회전할 때
+ * 어떤 좌표로 변하는지 하나씩 분석하여
+ * nowblock[i][j]=tempArr[j][2-i]라는 관계를 찾아냄
+ * 
+ */
 
