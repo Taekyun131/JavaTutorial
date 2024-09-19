@@ -49,6 +49,7 @@ public class Car_m {
 				}
 			}
 		}
+//		in.close();
 	}
 	public void myCar() {
 		Scanner in=new Scanner(System.in);
@@ -62,7 +63,7 @@ public class Car_m {
 				System.out.println("이름: "+allCar[i].name);
 			}
 		}
-		
+//		in.close();
 		
 	}
 	public void showCar() {
@@ -85,5 +86,7 @@ public class Car_m {
 				allCar[i]=null;
 			}
 		}
+//		in.close();
 	}
+	
 }

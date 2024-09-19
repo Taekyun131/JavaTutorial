@@ -48,7 +48,7 @@ public class Cat_m {
 				break;
 			}
 		}
-//		in.close();
+		in.close();
 	}
 	public void allList() {	//메서드 정의
 		System.out.println("고양이 전체보기");
