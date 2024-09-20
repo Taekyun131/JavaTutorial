@@ -13,7 +13,7 @@ public class TrainReg {
 		if(TrainState!="수리중") {
 			//기차이름
 			int trainName=TrainNum/1111;
-			System.out.println(trainName+"번열차");
+			System.out.println("기차이름: "+trainName+"번열차");
 //		if(TrainNum==1111) {
 //			System.out.println("기차이름: 1번열차");
 //		}else if(TrainNum==2222) {

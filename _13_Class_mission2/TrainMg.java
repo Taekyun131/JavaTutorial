@@ -24,7 +24,7 @@ public class TrainMg {
 				System.out.println("4. 기차 수리정보 보기를 선택");
 				fixTrain();
 			}else {
-				continue;
+				break;
 			}
 		}
 	}
@@ -133,7 +133,7 @@ public class TrainMg {
 	//수리중기차메뉴
 	public void fixTrain() {
 		while(true) {
-			System.out.println("-----번호를 선택하세요-----");
+			System.out.println("*****번호를 선택하세요*****");
 			System.out.println("1. 기차 수리등록");
 			System.out.println("2. 수리중인 기차보기");
 			System.out.println("3. 나가기");
@@ -147,7 +147,7 @@ public class TrainMg {
 						if(trainList[i]!=null) {
 							if(trainList[i].TrainNum==fixTrainNum){
 								trainList[i].TrainState="수리중";
-										break;
+								break;
 							}
 						}
 					}
