@@ -16,7 +16,6 @@ public class _07_mission_07 {
 			System.out.print(i+sign);
 		}
 		System.out.print(sum7);
-		System.out.println();
 	}
 
 }
