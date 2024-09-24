@@ -19,13 +19,13 @@ public class C_E_Main {
 				if(cMg==null) {
 					cMg=new ClientMg();
 				}else {
-					
+					cMg.menu();
 				}
 			}else if(selNum==2) {
 				if(eMg==null) {
 					eMg=new EventMg();
 				}else {
-					
+					eMg.menu();
 				}
 			}else if(selNum==3) {
 				break;

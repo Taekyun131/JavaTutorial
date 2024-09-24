@@ -6,6 +6,10 @@ public class EventMg {
 	EventReg [] eList=new EventReg[5];
 	Scanner in=new Scanner(System.in);
 	public EventMg() {
+		menu();
+	}
+	//메뉴
+	public void menu() {
 		while(true) {
 			System.out.println("번호를 선택하세요");
 			System.out.println("1. 이벤트 등록");

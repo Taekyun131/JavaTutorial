@@ -7,6 +7,10 @@ public class ClientMg {
 //	EventReg [] eList=new EventReg[5];
 	Scanner in=new Scanner(System.in);
 	public ClientMg() {
+			menu();
+	}
+	//메뉴
+	public void menu() {
 		while(true) {
 			System.out.println("번호를 선택하세요");
 			System.out.println("1. 고객등록");
@@ -15,8 +19,8 @@ public class ClientMg {
 			System.out.println("4. 아이디 삭제하기");
 			System.out.println("5. 전체 고객명단보기");
 			System.out.println("6. 돌아가기");
-//			System.out.println("5. 이벤트 등록하기");
-//			System.out.println("6. 이벤트 전체보기");
+//		System.out.println("5. 이벤트 등록하기");
+//		System.out.println("6. 이벤트 전체보기");
 			int selNum=in.nextInt();
 			in.nextLine();
 			if(selNum==1) {
@@ -27,17 +31,16 @@ public class ClientMg {
 				mod();
 			}else if(selNum==4) {
 				del();
-//			}else if(selNum==5) {
-//				addEvent();
-//			}else if(selNum==6) {
-//				showEvent();
+//		}else if(selNum==5) {
+//			addEvent();
+//		}else if(selNum==6) {
+//			showEvent();
 			}else if(selNum==5) {
 				allList();
 			}else if(selNum==6){
 				break;
 			}
 		}
-		
 	}
 		
 	//가입하기
