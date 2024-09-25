@@ -1,0 +1,11 @@
+ArrayList 인덱스가 있다 > 순서가 있다는 의미
+            가변길이다.
+
+사용 가능한 메서드
+add(value)   -- 맨뒤에 추가
+add(index,  value)  - index 위치에 추가하고 뒤로 밀림
+size()   -- 리스트의 전체 사이즈
+get( index)   -- index위치의 값 가져오기
+remove(index)  - index위치 값 제거
+clear()  - 리스트 전체 값 제거
+set(index,value)   - index위치 값 수정

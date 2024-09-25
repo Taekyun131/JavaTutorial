@@ -1,9 +1,11 @@
 package _14_Class_mission3_upgrade;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ClientMg {
-	ClientInfo []cList=new ClientInfo[5];
+//	ClientInfo []cList=new ClientInfo[5];
+	ArrayList<ClientInfo>cList=new ArrayList<>();
 	Scanner in=new Scanner(System.in);
 	
 	ClientMg(){
@@ -36,15 +38,21 @@ public class ClientMg {
 		}
 	}
 	public boolean rpt(String cId) {
-		for(int i=0;i<cList.length;i++) {
-			if(cList[i]!=null) {
-				if(cList[i].getId().equals(cId)) {
-					return false;
-					//return에는 호출위치에 값반환+break기능
-				}
+		for(int i=0;i<cList.size();i++) {
+			if(cList.get(i).id.equals(cId)) {
+				return false;
 			}
 		}
 		return true;
+//		for(int i=0;i<cList.length;i++) {
+//			if(cList[i]!=null) {
+//				if(cList[i].getId().equals(cId)) {
+//					return false;
+//					//return에는 호출위치에 값반환+break기능
+//				}
+//			}
+//		}
+//		return true;
 	}
 	
 	public void add() {
@@ -56,12 +64,12 @@ public class ClientMg {
 			System.out.println("이름을 입력하세요");
 			String cName=in.nextLine();
 			cInfo.setName(cName);
-			for(int i=0;i<cList.length;i++) {
-				if(cList[i]==null) {
-					cList[i]=cInfo;
-					break;
-				}
-			}
+//			for(int i=0;i<cList.length;i++) {
+//				if(cList[i]==null) {
+//					cList[i]=cInfo;
+//					break;
+//				}
+//			}
 		}else {
 			System.out.println("중복된 아이디가 있습니다.");
 		}
