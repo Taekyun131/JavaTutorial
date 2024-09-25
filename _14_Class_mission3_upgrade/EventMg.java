@@ -13,7 +13,8 @@ public class EventMg {
 			System.out.println("번호를 선택하세요");
 			System.out.println("1. 이벤트 등록하기");
 			System.out.println("2. 이벤트 전체보기");
-			System.out.println("3. 돌아가기");
+			System.out.println("3. 이벤트 신청하기");
+			System.out.println("4. 돌아가기");
 			int selNum=in.nextInt();
 			in. nextLine();
 			if(selNum==1) {
@@ -21,6 +22,8 @@ public class EventMg {
 			}else if(selNum==2) {
 				allList();
 			}else if(selNum==3) {
+				joinEvent();
+			}else if(selNum==4) {
 				break;
 			}
 			
@@ -48,5 +51,10 @@ public class EventMg {
 				eList[i].prt();
 			}
 		}
+	}
+	public void joinEvent() {
+		System.out.println("이벤트를 신청할 id를 입력하세요");
+		String cId=in.nextLine();
+		
 	}
 }
