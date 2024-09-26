@@ -53,7 +53,6 @@ public class GoodsMge {
 		
 	}
 	
-//	public void search() {
 	public void goodsMod() {	// 상품수정
 		System.out.println("상품명 입력");
 		String temp=in.nextLine();

@@ -44,21 +44,20 @@ public class UserReg {
 	public void buyGoods(String goodsName,int goodsNum) {
 		if(goods.size()==0) {
 			Goods item=new Goods();
-			item.goodsName=goodsName;
-			item.goodsNum=goodsNum;
+			item.setName(goodsName);
+			item.setNum(goodsNum);
 			goods.add(item);
-			item=null;
 		}else {
 			for(int i=0;i<goods.size();i++) {
-				if(goods.get(i).goodsName.equals(goodsName)) {
-					goods.get(i).goodsNum+=goodsNum;
-				}else {
-					Goods item=new Goods();
-					item.goodsName=goodsName;
-					item.goodsNum=goodsNum;
-					goods.add(item);
+				if(goods.get(i).getName().equals(goodsName)) {
+					goods.get(i).addNum(goodsNum);
+					break;
 				}
 			}
+			Goods item=new Goods();
+			item.setName(goodsName);
+			item.setNum(goodsNum);
+			goods.add(item);
 		}
 	}
 }
