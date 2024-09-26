@@ -77,41 +77,62 @@ public class ClientMg {
 	public void showInfo() {
 		System.out.println("조회할 아이디를 입력하세요");
 		String cId=in.nextLine();
-		for(int i=0;i<cList.length;i++) {
-			if(cList[i]!=null) {
-				if(cList[i].getId().equals(cId)) {
-					cList[i].prt();
-				}
+		for(int i=0;i<cList.size();i++) {
+			if(cList.get(i).getId().equals(cId)) {
+				cList.get(i).prt();
 			}
 		}
+	
+//		for(int i=0;i<cList.length;i++) {
+//			if(cList[i]!=null) {
+//				if(cList[i].getId().equals(cId)) {
+//					cList[i].prt();
+//				}
+//			}
+//		}
 	}
 	public void del() {
 		System.out.println("삭제할 아이디를 입력하세요");
 		String cId=in.nextLine();
-		for(int i=0;i<cList.length;i++) {
-			if(cList[i]!=null) {
-				if(cList[i].getId().equals(cId)) {
-					cList[i]=null;
-				}
+		for(int i=0;i<cList.size();i++) {
+			if(cList.get(i).getId().equals(cId)) {
+				cList.remove(i);
 			}
 		}
+//		for(int i=0;i<cList.length;i++) {
+//			if(cList[i]!=null) {
+//				if(cList[i].getId().equals(cId)) {
+//					cList[i]=null;
+//				}
+//			}
+//		}
 	}
 	public void mod() {
 		System.out.println("수정할 아이디를 입력하세요");
 		String cId=in.nextLine();
-		for(int i=0;i<cList.length;i++) {
-			if(cList[i].getId().equals(cId)) {
+		for(int i=0;i<cList.size();i++) {
+			if(cList.get(i).getId().equals(cId)) {
 				System.out.println("수정할 이름을 입력하세요");
 				String cName=in.nextLine();
-				cList[i].setName(cName);
+				cList.get(i).setName(cName);
 			}
 		}
+//		for(int i=0;i<cList.length;i++) {
+//			if(cList[i].getId().equals(cId)) {
+//				System.out.println("수정할 이름을 입력하세요");
+//				String cName=in.nextLine();
+//				cList[i].setName(cName);
+//			}
+//		}
 	}
 	public void allList() {
-		for(int i=0;i<cList.length;i++) {
-			if(cList[i]!=null) {
-				cList[i].prt();
-			}
+		for(int i=0;i<cList.size();i++) {
+			System.out.println(cList.get(i));
 		}
+//		for(int i=0;i<cList.length;i++) {
+//			if(cList[i]!=null) {
+//				cList[i].prt();
+//			}
+//		}
 	}
 }

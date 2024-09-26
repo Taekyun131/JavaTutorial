@@ -1,9 +1,11 @@
 package _14_Class_mission3_upgrade;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class EventMg {
-	EventReg[] eList=new EventReg[5];
+//	EventReg[] eList=new EventReg[5];
+	ArrayList<EventReg> eList=new ArrayList<>();
 	Scanner in=new Scanner(System.in);
 	EventMg(){
 		
@@ -37,20 +39,24 @@ public class EventMg {
 		System.out.println("이벤트 내용을 입력하세요");
 		String eContent=in.nextLine();
 		eReg.setContent(eContent);
-		for(int i=0;i<eList.length;i++) {
-			if(eList[i]==null) {
-				eList[i]=eReg;
-				break;
-			}
-		}
+		eList.add(eReg);
+//		for(int i=0;i<eList.length;i++) {
+//			if(eList[i]==null) {
+//				eList[i]=eReg;
+//				break;
+//			}
+//		}
 		
 	}
 	public void allList() {
-		for(int i=0;i<eList.length;i++) {
-			if(eList[i]!=null) {
-				eList[i].prt();
-			}
+		for(int i=0;i<eList.size();i++) {
+			eList.get(i).prt();
 		}
+//		for(int i=0;i<eList.length;i++) {
+//			if(eList[i]!=null) {
+//				eList[i].prt();
+//			}
+//		}
 	}
 	public void joinEvent() {
 		System.out.println("이벤트를 신청할 id를 입력하세요");

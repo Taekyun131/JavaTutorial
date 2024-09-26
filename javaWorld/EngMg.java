@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class EngMg {
 	EngReg eReg=null;
 	ArrayList<EngReg>wList=new ArrayList<>();
+	
 	Scanner in=new Scanner(System.in);
 	EngMg(){
 //		menu();
