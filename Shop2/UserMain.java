@@ -156,43 +156,28 @@ public class UserMain {
 			int buyNum=in.nextInt();
 			in.nextLine();
 			int total=gmge.gList.get(idx).pay*buyNum;
-			//해당하는 품목수량과 구매수량을 비교하여 구매가능여부확인
-			if(gmge.gList.get(idx).getNum()>=buyNum) {
-				//구매금액과 가지고 있는 금액을 비교하여 구매가능여부확인
-				if(total<=login.money) {
-					ureg.buyGoods(buy, buyNum);
-					login.setMoney(gmge.gList.get(idx).pay,buyNum);
-					gmge.gList.get(idx).goodsNum-=buyNum;
-					System.out.println("총금액 "+total+"원");
-					gmge.addSale(total);
+			for(int i=0; i< gmge.gList.size();i++) {
+				//남은 수량내에서 구매가능
+				if(gmge.gList.get(i).getNum()-buyNum>=0) {	
+					// 잔액없으면 구매불가
+					if(total<=login.money) {
+						ureg.buyGoods(buy, buyNum);
+						login.setMoney(gmge.gList.get(idx).pay,buyNum);
+						gmge.gList.get(idx).goodsNum-=buyNum;
+						System.out.println("총금액 "+total+"원");
+						gmge.addSale(total);
+						break;
+					}else {
+						System.out.println("잔액을 확인하세요");
+					}
 				}else {
-					System.out.println("잔액을 확인하세요");
+					System.out.println("구매수량이 너무 많습니다");
 				}
-			}else {
-				System.out.println("구매수량이 많습니다");
+				
+				if(gmge.gList.get(i).getNum()==0) {
+					gmge.gList.remove(i);
+				}
 			}
-//			for(int i=0; i< gmge.gList.size();i++) {
-//				//남은 수량내에서 구매가능
-//				if(gmge.gList.get(i).getNum()-buyNum>=0) {	
-//					// 잔액없으면 구매불가
-//					if(total<=login.money) {
-//						ureg.buyGoods(buy, buyNum);
-//						login.setMoney(gmge.gList.get(idx).pay,buyNum);
-//						gmge.gList.get(idx).goodsNum-=buyNum;
-//						System.out.println("총금액 "+total+"원");
-//						gmge.addSale(total);
-//						break;
-//					}else {
-//						System.out.println("잔액을 확인하세요");
-//					}
-//				}else {
-//					System.out.println("구매수량이 너무 많습니다");
-//				}
-//				
-//				if(gmge.gList.get(i).getNum()==0) {
-//					gmge.gList.remove(i);
-//				}
-//			}
 		}
 	}
 	
