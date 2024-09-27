@@ -1,4 +1,4 @@
-package Shop;
+package Shop2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class GoodsMge {
 	Scanner in=new Scanner(System.in);
 	ArrayList<Goods> gList=new ArrayList<>();  // 등록된 상품리스트
-	
+	int sales=0;
 	public GoodsMge() { 
 	
 		
@@ -21,7 +21,8 @@ public class GoodsMge {
 			System.out.println("2. 수정");
 			System.out.println("3. 삭제");
 			System.out.println("4. 조회");
-			System.out.println("5. 메인메뉴");
+			System.out.println("5. 총 매출 확인");
+			System.out.println("6. 메인메뉴");
 			int selNum=0;
 			selNum=in.nextInt();
 			in.nextLine();
@@ -34,6 +35,8 @@ public class GoodsMge {
 			}else if(selNum==4) {
 				goodsList();
 			}else if(selNum==5) {
+				System.out.println(sales);
+			}else if(selNum==6) {
 				break;
 			}
 		}
@@ -47,6 +50,9 @@ public class GoodsMge {
 		temp.setName(in.nextLine());
 		System.out.println("입고된 수량 입력");
 		temp.setNum(in.nextInt());
+		in.nextLine();
+		System.out.println("가격 입력");
+		temp.pay=in.nextInt();
 		in.nextLine();
 		//같은 품명의 등록된 상품이 있는지 스캔
 		int idx=-1;
@@ -117,7 +123,9 @@ public class GoodsMge {
 		}
 	
 	}
-	
+	public void addSale(int sales) {
+		 this.sales+=sales;
+	}
 	
 	
 }

@@ -1,4 +1,4 @@
-package Shop;
+package Shop2;
 
 import java.util.ArrayList;
 
@@ -7,6 +7,7 @@ public class UserReg {
 	String id=null;
 	String name=null;
 	String pwd=null;
+	int money = 0;
 	//유저가 구매한 물품을 저장할 arrayList
 	ArrayList<Goods> goods=new ArrayList<>();
 	
@@ -23,6 +24,7 @@ public class UserReg {
 			System.out.println("상품명: "+goods.get(i).goodsName);
 			System.out.println("상품수량: "+goods.get(i).goodsNum);
 			System.out.println("구매시간: "+goods.get(i).time);
+		
 		}
 	}
 	//아이디 설정
@@ -52,5 +54,10 @@ public class UserReg {
 		item.setNum(goodsNum);
 		item.setTime();
 		goods.add(item);
+		
+	}
+	// 잔액
+	public void setMoney(int pay,int num) {
+		money-=pay*num;
 	}
 }

@@ -1,4 +1,4 @@
-package Shop;
+package Shop2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -56,7 +56,7 @@ public class UserMain {
 			String pwd=in.nextLine();
 			System.out.println("비밀번호를 한번 더 입력하세요");
 			String pwd2=in.nextLine();
-			if(pwd.equals(pwd2)) {
+			if(pwd.equals(pwd2)) {		// 비밀번호 일치여부 확인하기
 				ureg.setPwd(pwd);
 				ulist.add(ureg);
 			}else {
@@ -95,6 +95,8 @@ public class UserMain {
 					login=user;
 					loginMenu();	//로그인 성공시 로그인 메뉴 호출
 					break;
+				}else {
+					System.out.println("비밀번호가 일치하지 않습니다");
 				}
 			}
 		}else {
@@ -108,7 +110,9 @@ public class UserMain {
 		while(true) {
 			System.out.println("1. 상품구매");
 			System.out.println("2. 구매내역");
-			System.out.println("3. 로그아웃");
+			System.out.println("3. 충전하기");
+			System.out.println("4. 잔액확인");
+			System.out.println("5. 로그아웃");
 			int selNum=in.nextInt();
 			in.nextLine();
 			if(selNum==1) {
@@ -116,6 +120,10 @@ public class UserMain {
 			}else if(selNum==2) {
 				blist();
 			}else if(selNum==3) {
+				charge();
+			}else if(selNum==4) {
+				checkmoney();
+			}else if(selNum==5) {
 				break;
 			}
 		}
@@ -147,26 +155,65 @@ public class UserMain {
 			System.out.println("구매할 수량 입력");
 			int buyNum=in.nextInt();
 			in.nextLine();
-			for(int i=0; i< gmge.gList.size();i++) {
-				//남은 수량내에서 구매가능
-				if(gmge.gList.get(i).getNum()-buyNum>=0) {	
+			int total=gmge.gList.get(idx).pay*buyNum;
+			//해당하는 품목수량과 구매수량을 비교하여 구매가능여부확인
+			if(gmge.gList.get(idx).getNum()>=buyNum) {
+				//구매금액과 가지고 있는 금액을 비교하여 구매가능여부확인
+				if(total<=login.money) {
 					ureg.buyGoods(buy, buyNum);
+					login.setMoney(gmge.gList.get(idx).pay,buyNum);
 					gmge.gList.get(idx).goodsNum-=buyNum;
-					
+					System.out.println("총금액 "+total+"원");
+					gmge.addSale(total);
 				}else {
-					System.out.println("구매수량이 너무 많습니다");
+					System.out.println("잔액을 확인하세요");
 				}
-				
-				if(gmge.gList.get(i).getNum()==0) {
-					gmge.gList.remove(i);
-				}
+			}else {
+				System.out.println("구매수량이 많습니다");
 			}
+//			for(int i=0; i< gmge.gList.size();i++) {
+//				//남은 수량내에서 구매가능
+//				if(gmge.gList.get(i).getNum()-buyNum>=0) {	
+//					// 잔액없으면 구매불가
+//					if(total<=login.money) {
+//						ureg.buyGoods(buy, buyNum);
+//						login.setMoney(gmge.gList.get(idx).pay,buyNum);
+//						gmge.gList.get(idx).goodsNum-=buyNum;
+//						System.out.println("총금액 "+total+"원");
+//						gmge.addSale(total);
+//						break;
+//					}else {
+//						System.out.println("잔액을 확인하세요");
+//					}
+//				}else {
+//					System.out.println("구매수량이 너무 많습니다");
+//				}
+//				
+//				if(gmge.gList.get(i).getNum()==0) {
+//					gmge.gList.remove(i);
+//				}
+//			}
 		}
 	}
 	
 	//구매리스트
 	public void blist() {
 		login.bprt();
+		System.out.println("잔액"+login.money+"원");
 		
 	}
+	
+	// 충전하기
+	public void charge() {
+		Scanner in=new Scanner(System.in);
+		System.out.println("충전할 금액을 입력하세요");
+		int tm=in.nextInt();
+		in.nextLine();
+		login.money+=tm;
+		System.out.println(login.money);
+	}
+	public void checkmoney() {
+		System.out.println(login.money+"원");
+	}
+	
 }

@@ -1,4 +1,4 @@
-package Shop;
+package Shop3;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -6,11 +6,14 @@ import java.time.format.DateTimeFormatter;
 public class Goods {
 	String goodsName = null;
 	int goodsNum = 0;
+	int pay = 0;
 	String time=null;
 	
 	//품목 수량 출력
 	public void prt() {
-		System.out.println(goodsName+"/"+goodsNum+"개");
+		System.out.println("---------------");
+		System.out.println(goodsName+"\t"+goodsNum+"개");
+		System.out.println(pay+"원");
 	}
 	//상품명 리턴
 	public String getName() {
