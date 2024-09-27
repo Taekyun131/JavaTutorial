@@ -13,9 +13,6 @@ public class UserMain {
 	
 	UserMain(){
 		//객체가 생성이 되지 않았으면 생성
-		if(ureg==null) {
-			ureg=new UserReg();
-		}
 		if(gmge==null) {
 			gmge=new GoodsMge();
 		}
@@ -59,6 +56,7 @@ public class UserMain {
 			if(pwd.equals(pwd2)) {		// 비밀번호 일치여부 확인하기
 				ureg.setPwd(pwd);
 				ulist.add(ureg);
+				System.out.println("가입이 완료 되었습니다.");
 			}else {
 				System.out.println("비밀번호가 일치하지 않습니다");
 			}
@@ -100,7 +98,7 @@ public class UserMain {
 				}
 			}
 		}else {
-			System.out.println("로그인 실패");
+			System.out.println("해당 아이디가 없습니다.");
 		}
 	}
 	
@@ -156,11 +154,9 @@ public class UserMain {
 			int buyNum=in.nextInt();
 			in.nextLine();
 			int total=gmge.gList.get(idx).pay*buyNum;
-			boolean num=true;
-			boolean price=true;
 			//해당하는 품목수량과 구매수량을 비교하여 구매여부확인
 			if(gmge.gList.get(idx).getNum()>=buyNum) {
-				if(total<=login.money) {
+				if(total<=login.money) {	// 잔액과 구매금액 비교해서 잔액부족시 구매불가
 					ureg.buyGoods(buy, buyNum);
 					login.setMoney(gmge.gList.get(idx).pay,buyNum);
 					gmge.gList.get(idx).goodsNum-=buyNum;
