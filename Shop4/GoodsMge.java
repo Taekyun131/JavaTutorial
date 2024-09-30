@@ -123,6 +123,7 @@ public class GoodsMge {
 		}
 	
 	}
+	//총 매출
 	public void addSale(int sales) {
 		 this.sales+=sales;
 	}
