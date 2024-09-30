@@ -56,7 +56,7 @@ public class UserReg {
 		goods.add(item);
 		
 	}
-	// 잔액
+	// 잔액계
 	public void setMoney(int pay,int num) {
 		money-=pay*num;
 	}
