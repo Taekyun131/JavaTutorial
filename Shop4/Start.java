@@ -1,6 +1,5 @@
 package Shop4;
 
-import java.util.Random;
 
 public class Start {
 	//메인클래스

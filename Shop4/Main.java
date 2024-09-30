@@ -11,7 +11,7 @@ public class Main {
 	ArrayList<UserReg> ulist=new ArrayList<>();
 	Main(){
 	//객체가 생성이 되지 않았으면 생성
-		if((umge==null)) {
+		if(umge==null) {
 			umge=new UserMain();
 		}
 		menu();

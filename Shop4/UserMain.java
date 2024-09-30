@@ -7,9 +7,9 @@ public class UserMain {
 	UserReg loginUser=null;
 	GoodsMge gmge=null;
 	UserMain(){
-	if(gmge==null) {
-		gmge=new GoodsMge();
-	}
+		if(gmge==null) {
+			gmge=new GoodsMge();
+		}
 		
 	}
 
