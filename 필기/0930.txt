@@ -1,0 +1,41 @@
+--접근제어자: 클래스의 멤버변수나 메서드에 접근할 수 있는 권한을 부여
+	>>내부자원의 보호를 위해 사용
+	>>객체지향언어의 특징인 은닉화와 관련
+
+-default(생략가능): package 내에서 접근가능
+-public: 전체
+-private: 클래스 내에서 접근가능
+(-protected)
+
+
+
+프로젝트폴더
+ㄴbin	*.class
+ㄴsrc	*.java
+   ㄴ패키지 a	M.java
+		K.java
+
+   ㄴ패키지 b	P.java
+
+
+M.java
+(default 생략)K k=new K();
+k.name >>참조가능(같은 패키지)
+k.prt() >>불가능
+
+K.java
+(default 생략)String name=null;
+public void setName(String n){
+	name=n;
+}
+private void prt(){
+	sysout(name);
+}
+
+
+P.java
+K k=new K();
+k.name>>참조불가능(같은 패키지x)
+k.prt()>>불가능
+
+
