@@ -26,6 +26,10 @@ public class Main {
 		MemberADM.companyName="Homan";
 		System.out.println(MemberADM.companyName);
 		
+//		MemberADM.teamName="kkk";
+		//상수는 초기값이 결정되면 값 변경 불가능
+		
+		
 		/* 새로운 스레드를 만들어서 멀티스레드로 운용가능
 		Thread t1=new Thread();
 		t1.setName("task1_Thread");
