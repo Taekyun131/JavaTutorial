@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class StudentM {
-	Student s=null;
-	Login user=null;
-	ArrayList <Student> sList=new ArrayList<>();
-	ClassM cm=null;
+	private Student s=null;
+	private Login user=null;
+	private ArrayList <Student> sList=new ArrayList<>();
+	private ClassM cm=null;
 	StudentM(){
 		if(user==null) {
 			user=new Login();
@@ -21,7 +21,8 @@ public class StudentM {
 			System.out.println("2. 로그인");
 			System.out.println("3. 이름검색");
 			System.out.println("4. 학생 전체보기");
-			System.out.println("5. 메인메뉴");
+			System.out.println("5. 등록 삭제하기");
+			System.out.println("6. 메인메뉴");
 			int selNum=in.nextInt();
 			in.nextLine();
 			if(selNum==1) {
@@ -33,6 +34,8 @@ public class StudentM {
 			}else if(selNum==4) {
 				allStudent();
 			}else if(selNum==5) {
+				del();
+			}else if(selNum==6) {
 				break;
 			}
 
@@ -95,7 +98,7 @@ public class StudentM {
 			String spwd=in.nextLine();
 			if(sList.get(temp).getPwd().equals(spwd)) {
 				user.setUser(sList.get(temp));
-				user.cm=cm;
+				user.setCm(cm);
 				user.menu();
 			}else {
 				System.out.println("비밀번호가 틀렸습니다.");
@@ -134,9 +137,24 @@ public class StudentM {
 		}
 	}
 	
-	//cm
-		public ClassM setCm() {
-			return cm;
+	//학생 삭제
+	private void del() {
+		Scanner in=new Scanner(System.in);
+		System.out.println("삭제할 학생의 이름을 입력하세요");
+		String sname=in.nextLine();
+		int idx=idCheck(sname);
+		if(idx==-1) {
+			System.out.println("입력한 학생이 없습니다.");
+		}else {
+			sList.remove(idx);
+			System.out.println("해당 학생이 삭제되었습니다.");
 		}
+		
+	}
 	
+	
+	//cm
+	public void setCm(ClassM cm) {
+		this.cm=cm;
+	}
 }

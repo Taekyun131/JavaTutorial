@@ -50,4 +50,9 @@ public class Login {
 	public void setUser(Student s) {
 		this.user=s;
 	}
+	
+	//cm
+	public void setCm(ClassM cm) {
+		this.cm=cm;
+	}
 }

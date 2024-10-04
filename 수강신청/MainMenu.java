@@ -3,8 +3,8 @@ package 수강신청;
 import java.util.Scanner;
 
 public class MainMenu {
-	StudentM sm=null;
-	ClassM cm=null;
+	private StudentM sm=null;
+	private ClassM cm=null;
 	
 	MainMenu() {
 		if(sm==null) {
@@ -27,7 +27,7 @@ public class MainMenu {
 			int selNum=in.nextInt();
 			in.nextLine();
 			if(selNum==1) {
-				sm.cm=cm;
+				sm.setCm(cm);
 				sm.menu();
 			}else if(selNum==2) {
 				cm.menu();
