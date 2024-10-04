@@ -1,0 +1,6 @@
+FileReader-텍스트를 읽을때 사용
+FileWriter-텍스트를 파일에 저장할 때 사용
+			      
+BufferReader-입력받은 데이터 String>> 버퍼에  //Scanner
+BufferWriter-버퍼에 있는 String 출력	//sysout
+
