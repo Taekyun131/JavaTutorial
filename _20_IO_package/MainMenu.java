@@ -64,12 +64,11 @@ public class MainMenu {
 			FileReader fr=new FileReader(file);
 			br=new BufferedReader(fr);
 			while(true) {
-				String line=br.
+				String line=br.readLine();
 				if(line.equals(type)) {
 					System.out.println(line);
 				}
 			}
-			br.close();
 			
 			
 		}catch (Exception e) {

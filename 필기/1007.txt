@@ -1,0 +1,52 @@
+--예외처리
+
+1. 에러vs예외 구분
+error: Java는 컴파일 언어>>error는 컴파일불가(실행불가)
+exception: 실행중 예기치 못한 이슈발생>>오작동 발생가능성>>사전에 방지
+Java에서는 예외를 처리해주는 객체존재: Exception 클래스에서 정의
+ex) Exception: Null pointer~, IndexOutof~, TypeMissMatch~... 
+
+2. 예외처리방법
+  1) 직접처리
+	try catch 구문
+  2) 떠넘기기(누구에게>Call한 위치로) 
+	메서드명( ) throws exception
+	메서드에서 exception 발생시, call한 메서드가 처리
+
+
+
+
+
+--오라클 연동(DAO,DTO)
+DTO (Data Transfer Object) : 데이터베이스 레코드의 데이터를 매핑하기 위한 데이터 객체
+			여러 개의 변수를 하나의 객체로 전달하기 위해 사용
+DAO (Data Access Object) : 데이터베이스의 data에 접근하기 위한 객체
+매핑: 키(key) 역할을 하는 데이터와 값(value) 역할을 하는 데이터를 짝 지어 저장하는 데이터 구조를 말한다. 
+	키는 저장된 데이터의 구별에, 값은 그 키와 연결되어 저장된 데이터를 뜻한다. 
+
+RAM
+======================
+
+jvm: Java binary 실행
+Oracle: 라이브러리 배포
+
+
+====================
+
+-Java
+MemberDTO
+id
+name
+age
+
+-Oracle
+table
+id	name	age
+
+오라클에서 배포한 라이브러리 ojdbc6.jar를 적당한 워크스페이스에 저장
+1. 프로젝트에 라이브러리 빌드(빌드는 생성하여 준비)
+   >>이클립스 기준으로 프로젝트 우클릭 후 build path
+
+2. 라이브러리로부터 필요한 드라이버를 로드한다.  
+   >>클래스 구조변경 필요(이유는 현실적으로 디자인하려고)
+3. 
