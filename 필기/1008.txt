@@ -63,7 +63,11 @@ main/dto/dao/service
 -쿼리문
 from>where>groupby>select>orderby순으로 확인
 
-
+**싱글톤 디자인패턴
+1. 생성자의 접근제어자를  private로 설정
+2. 클래스에서 자기자신의 객체주소변수 생성
+3. 객체주소변수를 static 변수로 설정
+4. 메서드를 생성해 객체의 주소 주입
 
 
 
