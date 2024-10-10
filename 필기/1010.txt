@@ -20,3 +20,36 @@ Framework: 설계된 틀안에서 개발 (ex. spring)
    4-3. 삭제하기	-delete from ideabank where num=?
    4-4. 검색하기	-select * from ideabank where title like '%?%'
    4-5. 전체보기	-select * from ideabank
+
+----------------------------------------------------------------------------------------------
+
+--상속
+특징: 클래스 재사용
+       Java에서는 단일상속만 가능
+       유지보수 용이
+       코드의 통일성(super class에서 변수와 메서드를 정의>sub class에서 변수명,메서드명 통일가능)
+       코드의 중복이 적다 
+       ex) IdeaDAO와 MemberDAO >>공통된 코드인 커넥션, 드라이버로드, 멤버변수를 별도의 클래스로 정의해 상속
+			           DB정보 변경시 한 클래스만 수정해도 됨
+
+Super Class(=부모 클래스)	
+Sub Class(=자식 클래스)
+
+sub class는 super class를 확장시킨 개념
+
+
+상속관점
+-is a: 일반적인 방법, 상속
+-has a: 포함
+
+Java는 최상위 클래스인 object 클래스가 존재
+모든 클래스는 object class 상속받는다.
+override: super class에서 상속받은 메서드를 sub class에서 재정의
+
+**객체지향언어의 특징: 
+추상화: 클래스들의 공통적인 요소를 뽑아서 상위 클래스를 만들어내는 것.공통적인 속성과 기능을 정의
+캡슐화: 내부자원 은닉화
+상속: super class의 변수와 메서드를 상속받아 sub class를 정의
+다형성: super class의 변수가 sub class의 주소를 가질 수 있다. 
+	부모로부터 정의된 멤버변수와 메서드는 자식객체에서 접근가능
+
