@@ -3,7 +3,6 @@ package openIdea;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
 public class Service {
 	private IdeaDTO idto=null;
 	IdeaDAO idao=new IdeaDAO();

@@ -1,0 +1,22 @@
+java: 개발자가 직접 클래스를 설계
+Framework: 설계된 틀안에서 개발 (ex. spring)
+
+--1008 미션
+프로젝트 구조 디자인
+1. project name: openIdea1
+2. package 구조
+   main	//프로그램 시작
+   dao	//오라클 데이터베이스 CRUD
+   dto	//데이터 전송객체
+   service	//메뉴와 각 메뉴에 대한 처리
+
+3. ERD- 샘플은 테이블이 하나이므로 ERD 생략
+   테이블 구조: 테이블명=ideabank(num, title, content, writer, indate)
+	       시퀀스명=ideabank_seq
+4. 주요기능
+	//service		//dao query
+   4-1. 제안하기	-insert into ideabank values(ideabank_seq.nextval,?,?,?,defaut)
+   4-2. 수정하기	-update ideabank set title=?,content=? where num=?
+   4-3. 삭제하기	-delete from ideabank where num=?
+   4-4. 검색하기	-select * from ideabank where title like '%?%'
+   4-5. 전체보기	-select * from ideabank

@@ -31,8 +31,8 @@ Connection pool: Connection을 무한대로 만들지 않고, 일정 수만큼 c
 **개발준비단계
 빌드: 오라클 라이브러리, 확장자는 jar
 IDE: 이클립스
-DBMS: oracle 11g
-언어: java 1.8
+DBMS: Oracle 11g
+언어: Java 1.8
 라이브러리: ojdbc6.jar  
 DBTool: sql developer
 
