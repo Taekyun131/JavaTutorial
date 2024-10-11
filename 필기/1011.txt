@@ -1,0 +1,15 @@
+--상속
+정의: super class>>subclass 확장
+특징: 단일상속, 중복성 최소화, 통일성
+
+다형성 성격을 이용하여 super class 변수로 sub class 객체 참조가능
+다형성을 이용해 코드를 짜면 유연한 코딩이 가능
+
+
+
+추상 메서드: 메서드 선언은 했으나 구현은 되지 않은 상태
+	override 강제성을 갖는다.
+public abstract void k( );
+
+-openIdea2에서...
+implements ActionListener: (인터페이스)>> 이벤트 처리기능을 구현받는다.
