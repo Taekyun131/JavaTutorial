@@ -1,0 +1,46 @@
+--상속과 인터페이스
+
+-1011미션중
+JFrame  			extends(상속)>> Mainframe(GUI)
+ActionListener(인터페이스) 	implements(구현)>> Mainframe(이벤트 동작처리기능 제공)
+-----------------------------------------------------------------------------------------------------------------
+
+Zooinfo	extends>>tiger	tiger에 CRUD 기능추가 or 유지보수??
+응집도를 낮추기 위해 기능 별도 정의(소스 수정 적게)
+클래스: CRUD	>>상대적으로 응집도가 높다>>	interface로 CRUD기능설계하고 기능구현받는다.
+
+Zooinfo(super class)
+ㄴString name, eat( ) 
+
+	↓	extends
+
+tiger(sub class)
+
+//MemberDAO m=new  OMember( );		(객체 지향 프로그램의 다형성)
+>>소스 수정 시 생성하는 객체만 바꾸고 나머지 소스는 수정필요 없다.
+MemberDAO m=new MMember();	
+m.add()
+m.del()	
+
+	↑	implements(interface)	>>의존도를 낮추기 위해(tiger가 외부의 소스수정에 최소한의 수정필요)
+
+//인터페이스는 추상메서드만 가질 수 있다.
+public interface MemberDAO( ){
+	public void add();
+	public oid del();
+
+}
+
+public class OMember implements MemberDAO( ){
+	@override
+	add(){
+	~
+	}
+	
+	@override
+	del(){
+	~
+	}
+}
+
+public class MMember implements MemberDAO(){~~}
