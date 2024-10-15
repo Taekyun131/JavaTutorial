@@ -2,8 +2,12 @@ package ob_login;
 
 import java.util.Scanner;
 
+import ob_staff.Manager;
+
 public class LoginManager {
 	
+	Manager m=null;
+
 	public void menu(){
 		while(true) {
 			Scanner in=new Scanner(System.in);
@@ -18,11 +22,11 @@ public class LoginManager {
 			if(selNum==1) {
 				
 			}else if(selNum==2) {
-				
+				m.orderItem();
 			}else if(selNum==3) {
 				
 			}else if(selNum==4) {
-				
+				m.showStaff();
 			}else if(selNum==5) {
 				break;
 			}

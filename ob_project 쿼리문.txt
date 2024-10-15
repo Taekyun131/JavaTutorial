@@ -1,0 +1,11 @@
+create table staff(
+  2  id varchar2(10) primary key,
+  3  pwd varchar2(20),
+  4  name varchar2(10),
+  5  rank varchar2(6) check(rank in('사원','매니저','점주')),
+  6  wtime number(2));
+
+create table item(
+  2  title varchar2(20) primary key,
+  3  price number(5),
+  4  qty number(3));

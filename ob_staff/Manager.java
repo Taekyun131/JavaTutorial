@@ -1,6 +1,6 @@
 package ob_staff;
 
-public class Manager {
+public class Manager extends Staff {
 
 	public void orderItem() {
 		

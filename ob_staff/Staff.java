@@ -39,6 +39,16 @@ public class Staff {
 	public void setWorkTime(int workTime) {
 		this.workTime = workTime;
 	}
+	@Override
+	public String toString() {
+		return "Staff [name=" + name + ", rank=" + rank + ", id=" + id + "]";
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 }
