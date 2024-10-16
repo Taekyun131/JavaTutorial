@@ -34,7 +34,8 @@ public class LoginMain {
 			System.out.println("1. 직원 로그인");
 			System.out.println("2. 매니저 로그인");
 			System.out.println("3. 점주 로그인");
-			System.out.println("4. 프로그램 종료");
+			System.out.println("4. 고객 리뷰달기");
+			System.out.println("5. 프로그램 종료");
 			int selNum=in.nextInt();
 			in.nextLine();
 			if(selNum==1) {
@@ -44,12 +45,22 @@ public class LoginMain {
 			}else if(selNum==3) {
 				loginO();
 			}else if(selNum==4) {
+				loginC();
+			}else if(selNum==5) {
 				break;
 			}
 		}
 	}
 	
-	
+	//고객 리뷰달기
+	private void loginC() {
+		Scanner in=new Scanner(System.in);
+		System.out.println("이름을 입력하세요");
+		String name=in.nextLine();
+		System.out.println("리뷰를 입력하세요");
+		String content=in.nextLine();
+		sdao.review(name, content);
+	}
 	//직원 로그인
 	private void loginS() {
 		Scanner in=new Scanner(System.in);

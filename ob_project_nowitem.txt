@@ -1,0 +1,13 @@
+create table nowitem(
+no number(2),
+name varchar2(10),
+price number(6),
+qty number(4) default 0);
+
+create sequence nowitem_no;
+
+insert into nowitem values(nowitem_no.nextval,'채끝',60000,default);
+insert into nowitem values(nowitem_no.nextval,'등심',50000,default);
+insert into nowitem values(nowitem_no.nextval,'안심',80000,default);
+insert into nowitem values(nowitem_no.nextval,'토마호크',120000,default);
+insert into nowitem values(nowitem_no.nextval,'포터하우스',150000,default);

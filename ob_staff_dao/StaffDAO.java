@@ -55,15 +55,15 @@ public class StaffDAO {
 		return false;	//커넥션 자원을 획득하지 못한 경우
 	}
 	//직원 추가
-	public void add() {
+	public void add(Staff s) {
 		if(conn()) {
 			try {
 				String sql="insert into staff values(?,?,?,?,default)";
 				PreparedStatement psmt=conn.prepareStatement(sql);
-				psmt.setString(1, sdto.getId());
-				psmt.setString(2, sdto.getPwd());
-				psmt.setString(3, sdto.getName());
-				psmt.setString(4, sdto.getRank());
+				psmt.setString(1, s.getId());
+				psmt.setString(2, s.getPwd());
+				psmt.setString(3, s.getName());
+				psmt.setString(4, s.getRank());
 				int result=psmt.executeUpdate();
 				if(result!=0) {
 					System.out.println("직원 채용완료");
@@ -87,12 +87,13 @@ public class StaffDAO {
 		}
 	}
 	//직원삭제
-	public void del(String id) {
+	public void del(String name,String id) {
 		if(conn()) {
 			try {
-				String sql="delete staff where id=?";
+				String sql="delete staff where name=? and id=?";
 				PreparedStatement psmt=conn.prepareStatement(sql);
-				psmt.setString(1, id);
+				psmt.setString(1, name);
+				psmt.setString(2, id);
 				int result=psmt.executeUpdate();
 				if(result!=0) {
 					conn.commit();
@@ -103,6 +104,15 @@ public class StaffDAO {
 				}
 			} catch (Exception e) {
 				// TODO: handle exception
+			}finally {
+				if(conn!=null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 			
@@ -112,7 +122,9 @@ public class StaffDAO {
 		slist=new ArrayList<>();
 		if(conn()) {
 			try {
-				String sql="select *from staff";
+				String sql="select *from staff "
+						+ "order by decode(rank,'점주',1,'매니저',2,'사원',3)";
+						 
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
@@ -219,107 +231,150 @@ public class StaffDAO {
 				
 			} catch (Exception e) {
 				// TODO: handle exception
+			}finally {
+				if(conn!=null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
 			}
 		}
 	}
 	//로그인 여부
 	public Staff loginchk(String id,String pwd) {
-		if(conn()) {
-			try {
-				String sql="select * from staff where id=? and pwd=?";
-				PreparedStatement psmt=conn.prepareStatement(sql);
-				psmt.setString(1,id);
-				psmt.setString(2,pwd);
-				ResultSet rs=psmt.executeQuery();
-				while(rs.next()) {
-					sdto=new Staff();
-					sdto.setId(rs.getString("id")); 
-					sdto.setPwd(rs.getString("pwd"));
-					sdto.setName(rs.getString("name"));
-					sdto.setRank(rs.getString("rank"));
-					return sdto;
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-			}finally {
-				if(conn!=null) {
-					try {
-						conn.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+		ArrayList<Staff>slist=all();
+		for(Staff temp:slist) {
+			if(temp.getId().equals(id)&&
+					temp.getPwd().equals(pwd)){
+				return temp;
 			}
 		}
 		System.out.println("로그인 실패");
 		return null;
 	}
+//	public Staff loginchk(String id,String pwd) {
+//		if(conn()) {
+//			try {
+//				String sql="select * from staff where id=? and pwd=?";
+//				PreparedStatement psmt=conn.prepareStatement(sql);
+//				psmt.setString(1,id);
+//				psmt.setString(2,pwd);
+//				ResultSet rs=psmt.executeQuery();
+//				while(rs.next()) {
+//					sdto=new Staff();
+//					sdto.setId(rs.getString("id")); 
+//					sdto.setPwd(rs.getString("pwd"));
+//					sdto.setName(rs.getString("name"));
+//					sdto.setRank(rs.getString("rank"));
+//					if(sdto.getRank().equals("사원"))
+//					return sdto;
+//				}
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//			}finally {
+//				if(conn!=null) {
+//					try {
+//						conn.close();
+//					} catch (SQLException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//		}
+//		System.out.println("로그인 실패");
+//		return null;
+//	}
 	//매니저 로그인 여부
-		public Manager loginMchk(String id,String pwd) {
-			if(conn()) {
-				try {
-					String sql="select * from staff where id=? and pwd=? and rank='매니저'";
-					PreparedStatement psmt=conn.prepareStatement(sql);
-					psmt.setString(1,id);
-					psmt.setString(2,pwd);
-					ResultSet rs=psmt.executeQuery();
-					while(rs.next()) {
-						Manager mdto=new Manager();
-						mdto.setId(rs.getString("id")); 
-						mdto.setPwd(rs.getString("pwd"));
-						mdto.setName(rs.getString("name"));
-						mdto.setRank(rs.getString("rank"));
-						return mdto;
-					}
-				} catch (Exception e) {
-					// TODO: handle exception
-				}finally {
-					if(conn!=null) {
-						try {
-							conn.close();
-						} catch (SQLException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
-					}
-				}
-			}
-			return null;
-		}
-	//점주 로그인 여부
-	public Owner loginOchk(String id,String pwd) {
-		if(conn()) {
-			try {
-				String sql="select * from staff where id=? and pwd=? and rank='점주'";
-				PreparedStatement psmt=conn.prepareStatement(sql);
-				psmt.setString(1,id);
-				psmt.setString(2,pwd);
-				ResultSet rs=psmt.executeQuery();
-				while(rs.next()) {
-					Owner odto=new Owner();
-					odto.setId(rs.getString("id")); 
-					odto.setPwd(rs.getString("pwd"));
-					odto.setName(rs.getString("name"));
-					odto.setRank(rs.getString("rank"));
-					return odto;
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-			}finally {
-				if(conn!=null) {
-					try {
-						conn.close();
-					} catch (SQLException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+	public Manager loginMchk(String id, String pwd) {
+		ArrayList<Manager>mlist=allM();
+		Owner o=Owner.getInstance();
+		mlist.add(o);
+		for(Manager t:mlist) {
+			if(t.getId().equals(id)&&
+					t.getPwd().equals(pwd)) {
+				return t;
 			}
 		}
 		return null;
 	}
-		
+//		public Manager loginMchk(String id,String pwd) {
+//			if(conn()) {
+//				try {
+//					String sql="select * from staff where id=? and pwd=? "
+//							+ "and rank='매니저' or rank='점주'";
+//					PreparedStatement psmt=conn.prepareStatement(sql);
+//					psmt.setString(1,id);
+//					psmt.setString(2,pwd);
+//					ResultSet rs=psmt.executeQuery();
+//					while(rs.next()) {
+//						Manager mdto=new Manager();
+//						mdto.setId(rs.getString("id")); 
+//						mdto.setPwd(rs.getString("pwd"));
+//						mdto.setName(rs.getString("name"));
+//						mdto.setRank(rs.getString("rank"));
+//						return mdto;
+//					}
+//				} catch (Exception e) {
+//					// TODO: handle exception
+//				}finally {
+//					if(conn!=null) {
+//						try {
+//							conn.close();
+//						} catch (SQLException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//					}
+//				}
+//			}
+//			return null;
+//		}
+	
+	//점주 로그인 여부
+	public Owner loginOchk(String id,String pwd) {
+		Owner temp=showO();
+		if(temp.getId().equals(id)&&
+				temp.getPwd().equals(pwd)) {
+			return temp;
+		}
+		return null;
+	}
+//	public Owner loginOchk(String id,String pwd) {
+//		if(conn()) {
+//			try {
+//				String sql="select * from staff where id=? and pwd=? and rank='점주'";
+//				PreparedStatement psmt=conn.prepareStatement(sql);
+//				psmt.setString(1,id);
+//				psmt.setString(2,pwd);
+//				ResultSet rs=psmt.executeQuery();
+//				while(rs.next()) {
+//					Owner odto=new Owner();
+//					odto.setId(rs.getString("id")); 
+//					odto.setPwd(rs.getString("pwd"));
+//					odto.setName(rs.getString("name"));
+//					odto.setRank(rs.getString("rank"));
+//					return odto;
+//				}
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//			}finally {
+//				if(conn!=null) {
+//					try {
+//						conn.close();
+//					} catch (SQLException e) {
+//						// TODO Auto-generated catch block
+//						e.printStackTrace();
+//					}
+//				}
+//			}
+//		}
+//		return null;
+//	}
+	
 	
 	
 	//매니저 리스트
@@ -355,16 +410,19 @@ public class StaffDAO {
 	}
 	//점주
 	private Owner showO() {
-		Owner odto=new Owner();
+		Owner odto=Owner.getInstance();
 		if(conn()) {
 			try {
 				String sql="select * from staff where rank='점주'";
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
-				odto.setId(rs.getString("id")); 
-				odto.setPwd(rs.getString("pwd"));
-				odto.setName(rs.getString("name"));
-				odto.setRank(rs.getString("rank"));
+				while(rs.next()) {
+					odto.setId(rs.getString("id")); 
+					odto.setPwd(rs.getString("pwd"));
+					odto.setName(rs.getString("name"));
+					odto.setRank(rs.getString("rank"));
+					return odto;
+				}
 			} catch (Exception e) {
 				// TODO: handle exception
 			}finally {
@@ -378,6 +436,28 @@ public class StaffDAO {
 				}
 			}
 		}
-		return odto;
+		return null;
+	}
+	
+	//고객 리뷰달기
+	public void review(String name,String content) {
+		if(conn()) {
+			try {
+				String sql="insert into review values (review_no.nextval,?,?)";
+				PreparedStatement psmt=conn.prepareStatement(sql);
+				psmt.setString(1, name);
+				psmt.setString(2, content);
+				int result=psmt.executeUpdate();
+				if(result!=0) {
+					System.out.println("리뷰달기 성공");
+					conn.commit();
+				}else {
+					System.out.println("리뷰달기 실패");
+					conn.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	}
 }

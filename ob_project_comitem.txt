@@ -1,0 +1,22 @@
+채끝 60000
+등심 50000
+안심 80000
+토마호크 180000
+포터하우스 230000
+
+create table comitem(
+no number(2),
+name varchar2(10),
+price number(6),
+qty number(4));
+
+create sequence comitem_no;
+
+insert into comItem values(comitem_no.nextval,'채끝',60000,200);
+insert into comItem values(comitem_no.nextval,'등심',50000,200);
+insert into comItem values(comitem_no.nextval,'안심',80000,200);
+insert into comItem values(comitem_no.nextval,'토마호크',120000,200);
+insert into comItem values(comitem_no.nextval,'포터하우스',150000,200);
+
+
+
