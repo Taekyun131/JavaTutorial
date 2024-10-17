@@ -95,7 +95,7 @@ public class ItemDAO {
 						price= rs.getInt("price");
 						item=rs.getString("name");
 					}
-					sql="insert into return values(?,?,?,?)";
+					sql="insert into orderitem values(?,?,?,?)";
 					psmt=conn.prepareStatement(sql);
 					psmt.setString(1, mname);
 					psmt.setString(2, item);
@@ -157,7 +157,7 @@ public class ItemDAO {
 		ArrayList<ItemDTO>ilist=new ArrayList<>();
 		if(conn()) {
 			try {
-				String sql="select * from item";
+				String sql="select * from nowitem";
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
@@ -337,17 +337,18 @@ public class ItemDAO {
 		if(conn()) {
 			try {
 				int total=0;
-				String sql="select sum(price) from revenue";
+				String sql="select sum(price*qty) as sum from revenue group by item";
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
-					total+=rs.getInt("sum(price)");
+					total+=rs.getInt("sum");
 				}
-				sql="select sum(price) from return";
+				sql="select sum(price*qty) as sum from return group by item";
 				psmt=conn.prepareStatement(sql);
 				rs=psmt.executeQuery();
 				while(rs.next()) {
-					total+=rs.getInt("sum(price)");
+					
+					total+=rs.getInt("sum");
 				}
 				return total;
 			} catch (Exception e) {
@@ -370,13 +371,13 @@ public class ItemDAO {
 		if(conn()) {
 			try {
 				int total=0;
-				String sql="select sum(price) from return";
+				String sql="select sum(price*qty) as sum from orderitem group by item";
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
-					total=rs.getInt("sum(price)");
-					return total;
+					total+=rs.getInt("sum");
 				}
+				return total;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}finally {

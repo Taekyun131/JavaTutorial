@@ -9,13 +9,21 @@ price number(7)
 create table return(
 mname varchar2(10),
 item varchar2(10),
-qty number(3)
+qty number(3),
 price number(7)
 );
 
-create table order(
+create table orderitem(
 mname varchar2(10),
 item varchar2(10),
-qty number(3)
+qty number(3),
 price number(7)
 );
+
+create table review(
+no number(3),
+name varchar2(10),
+content varchar2(50),
+star number(1) check(star in(1,2,3,4,5)));
+
+create sequence review_no;

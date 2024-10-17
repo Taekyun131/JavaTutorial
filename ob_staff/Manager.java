@@ -21,10 +21,12 @@ public class Manager extends Staff {
 		int qty=in.nextInt();
 		in.nextLine();
 		idao.orderItem(selNum,qty);
+		idao.addOrder(this.getName(), selNum, qty);
 	}
 	public void returnItem() {
+		showItem();
 		Scanner in=new Scanner(System.in);
-		System.out.println("반품할 품명을 입력하세요");
+		System.out.println("반품할 품목을 선택하세요");
 		int selNum=in.nextInt();
 		in.nextLine();
 		System.out.println("반품수량을 입력하세요");

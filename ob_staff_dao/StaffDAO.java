@@ -123,7 +123,7 @@ public class StaffDAO {
 		if(conn()) {
 			try {
 				String sql="select *from staff "
-						+ "order by decode(rank,'점주',1,'매니저',2,'사원',3)";
+						+ "order by decode(rank,'점주',1,'매니저',2,'사원',3),name";
 						 
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
@@ -291,8 +291,7 @@ public class StaffDAO {
 	//매니저 로그인 여부
 	public Manager loginMchk(String id, String pwd) {
 		ArrayList<Manager>mlist=allM();
-		Owner o=Owner.getInstance();
-		mlist.add(o);
+		mlist.add(showO());
 		for(Manager t:mlist) {
 			if(t.getId().equals(id)&&
 					t.getPwd().equals(pwd)) {
@@ -439,25 +438,5 @@ public class StaffDAO {
 		return null;
 	}
 	
-	//고객 리뷰달기
-	public void review(String name,String content) {
-		if(conn()) {
-			try {
-				String sql="insert into review values (review_no.nextval,?,?)";
-				PreparedStatement psmt=conn.prepareStatement(sql);
-				psmt.setString(1, name);
-				psmt.setString(2, content);
-				int result=psmt.executeUpdate();
-				if(result!=0) {
-					System.out.println("리뷰달기 성공");
-					conn.commit();
-				}else {
-					System.out.println("리뷰달기 실패");
-					conn.rollback();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-	}
+	
 }

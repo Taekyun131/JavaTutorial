@@ -2,6 +2,7 @@ package ob_login;
 
 import java.util.Scanner;
 
+import ob_reviewDAO.ReviewDAO;
 import ob_staff.Manager;
 import ob_staff.Owner;
 import ob_staff.Staff;
@@ -12,6 +13,7 @@ public class LoginMain {
 	LoginManager lm=null;
 	LoginOwner lo=null;
 	StaffDAO sdao=StaffDAO.getInstance();//싱글톤 디자인
+	ReviewDAO rdao=ReviewDAO.getInstance();
 	Staff s=null;
 	public LoginMain(){
 		init();
@@ -54,12 +56,7 @@ public class LoginMain {
 	
 	//고객 리뷰달기
 	private void loginC() {
-		Scanner in=new Scanner(System.in);
-		System.out.println("이름을 입력하세요");
-		String name=in.nextLine();
-		System.out.println("리뷰를 입력하세요");
-		String content=in.nextLine();
-		sdao.review(name, content);
+		rdao.menu();
 	}
 	//직원 로그인
 	private void loginS() {

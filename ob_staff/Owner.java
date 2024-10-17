@@ -3,13 +3,16 @@ package ob_staff;
 import java.util.Scanner;
 
 import ob_item_dao.ItemDAO;
+import ob_reviewDAO.ReviewDAO;
 
 public class Owner extends Manager {
 	public static Owner o=null;
 	ItemDAO idao=ItemDAO.getInstance();
+	
 	private Owner() {
 		
 	}
+	ReviewDAO rdao=ReviewDAO.getInstance();
 	public static Owner getInstance() {
 		if(o==null) {
 			o=new Owner();
@@ -50,5 +53,8 @@ public class Owner extends Manager {
 		int totalOut=idao.outMoney();
 		System.out.println("총 금액: "+(totalIn-totalOut));
 	}
-	
+	//리뷰확인
+	public void chkReview() {
+		rdao.showReview();
+	}
 }
