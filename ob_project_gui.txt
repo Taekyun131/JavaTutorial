@@ -1,0 +1,8 @@
+--gui
+JCheckbox(swing)
+is selected()-선택되면 실행
+Checkbox(awt)
+getState()-선택되면 true
+
+
+

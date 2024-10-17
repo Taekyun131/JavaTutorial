@@ -11,3 +11,5 @@ insert into nowitem values(nowitem_no.nextval,'등심',50000,default);
 insert into nowitem values(nowitem_no.nextval,'안심',80000,default);
 insert into nowitem values(nowitem_no.nextval,'토마호크',120000,default);
 insert into nowitem values(nowitem_no.nextval,'포터하우스',150000,default);
+
+
