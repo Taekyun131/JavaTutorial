@@ -5,6 +5,8 @@ public class ReviewDTO {
 	private String name=null;
 	private String content=null;
 	private int star=0;
+	private String rtime=null;
+	private String vdate=null;
 	public int getNo() {
 		return no;
 	}
@@ -30,6 +32,18 @@ public class ReviewDTO {
 		this.star = star;
 	}
 	
+	public String getRtime() {
+		return rtime;
+	}
+	public void setRtime(String rtime) {
+		this.rtime = rtime;
+	}
+	public String getVdate() {
+		return vdate;
+	}
+	public void setVdate(String vdate) {
+		this.vdate = vdate;
+	}
 	@Override
 	public String toString() {
 		return "[no=" + no + ", name=" + name + ", content=" + content + ", star=" + star + "]";

@@ -10,16 +10,9 @@ import ob2_review_dto.ReviewDTO;
 public class Owner extends Manager {
 	public static Owner o=null;
 	ItemDAO idao=ItemDAO.getInstance();
-	private Owner() {
-		
-	}
+	
 	ReviewDAO rdao=ReviewDAO.getInstance();
-	public static Owner getInstance() {
-		if(o==null) {
-			o=new Owner();
-		}
-		return o;
-	}
+	
 	
 	//직원입사
 	public void addStaff() {

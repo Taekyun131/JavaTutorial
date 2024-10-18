@@ -2,6 +2,7 @@ package ob2_frame;
 
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,10 +10,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ob2_login.LoginStaff;
 import ob2_staff.Manager;
 import ob2_staff.Owner;
 import ob2_staff.Staff;
@@ -38,7 +39,7 @@ public class MainFrame extends JFrame
 	JTextField insertId=new JTextField();
 	JTextField insertPwd=new JTextField();
 	JButton btn_1=new JButton("로그인");
-	private JLabel title=new JLabel("<html><body text='orange'><h2>스테이크 하우스입니다.</h2>");
+	private JLabel title=new JLabel("<html><body text='orange'><h2>스테이크 하우스</h2>");
 	public MainFrame() {
 		//프레임 기본설정
 		this.setBounds(150,150,600,500);
@@ -53,7 +54,7 @@ public class MainFrame extends JFrame
 		panel_b.add(panel_i2);
 		panel_b.add(panel_i3);
 		panel_b.add(panel_c);
-		panel_c.setLayout(new GridLayout(0,3));
+		panel_c.setLayout(new FlowLayout());
 		panel_c.add(cbx1);
 		panel_c.add(cbx2);
 		panel_c.add(cbx3);
@@ -79,8 +80,10 @@ public class MainFrame extends JFrame
 			insertPwd.setText("");
 			Staff login=sdao.loginchk(id, pwd);
 			if(login!=null) {
-				LoginStaff ls=new LoginStaff();
-				ls.menu(login);
+				new LoginStaffFrame(login);
+			}else {
+				JOptionPane.showMessageDialog(
+						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.WARNING_MESSAGE);
 			}
 		}else if(cbx2.getState()
 					&&e.getSource()==btn_1) {
@@ -91,6 +94,9 @@ public class MainFrame extends JFrame
 			Manager login=sdao.loginMchk(id, pwd);
 			if(login!=null) {
 				
+			}else {
+				JOptionPane.showMessageDialog(
+						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.WARNING_MESSAGE);
 			}
 			
 		}else if(cbx3.getState()
@@ -102,6 +108,9 @@ public class MainFrame extends JFrame
 			Owner login=sdao.loginOchk(id, pwd);
 			if(login!=null) {
 				
+			}else {
+				JOptionPane.showMessageDialog(
+						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.WARNING_MESSAGE);
 			}
 			
 		}

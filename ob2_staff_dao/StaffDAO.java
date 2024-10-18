@@ -133,6 +133,7 @@ public class StaffDAO {
 					sdto.setPwd(rs.getString("pwd"));
 					sdto.setName(rs.getString("name"));
 					sdto.setRank(rs.getString("rank"));
+					sdto.setWorkTime(rs.getInt("wtime"));
 					slist.add(sdto);
 				}
 			} catch (SQLException e) {
@@ -152,7 +153,7 @@ public class StaffDAO {
 		return slist;
 	}
 	//회원정보수정
-	public void mod(String id,String pwd,String name) {
+	public void modInfo(String id,String pwd,String name) {
 		if(conn()) {
 			try {
 				String sql="update staff set pwd=?,name=? where id=?";
@@ -214,19 +215,23 @@ public class StaffDAO {
 			}
 		}
 	}
-	//근무시간 확인
-	public void chkWtime(Staff s) {
+	//수정된 정보 리턴
+	public Staff returnStaff(Staff s) {
 		if(conn()) {
 			try {
+				Staff temp=new Staff();
 				String id=s.getId();
 				String sql="select * from staff where id=?";
 				PreparedStatement psmt=conn.prepareStatement(sql);
-				psmt.setString(1, id);
+				psmt.setString(1, s.getId());
 				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
-//					sdto=new Staff();
-//					sdto.setWorkTime(rs.getInt("wtime"));
-					System.out.println("총 근무시간: "+rs.getString("wtime"));
+					temp.setId(rs.getString("id")); 
+					temp.setPwd(rs.getString("pwd"));
+					temp.setName(rs.getString("name"));
+					temp.setRank(rs.getString("rank"));
+					temp.setWorkTime(rs.getInt("wtime"));
+					return temp;
 				}
 				
 			} catch (Exception e) {
@@ -242,6 +247,7 @@ public class StaffDAO {
 				}
 			}
 		}
+		return null;
 	}
 	//로그인 여부
 	public Staff loginchk(String id,String pwd) {
@@ -255,6 +261,21 @@ public class StaffDAO {
 		System.out.println("로그인 실패");
 		return null;
 	}
+//	//직급확인
+//	public Staff rankchk(Staff temp) {
+//		if(temp!=null) {
+//			if(temp.getRank().equals("사원")) {
+//				return temp; 
+//			}else if(temp.getRank().equals("매니저")){
+//				Manager tempM=(Manager) temp;
+//				return tempM;
+//			}else if(temp.getRank().equals("점주")) {
+//				Owner tempO=(Owner) temp;
+//				return tempO;
+//			}
+//		}
+//		return null;
+//	}
 //	public Staff loginchk(String id,String pwd) {
 //		if(conn()) {
 //			try {
@@ -390,6 +411,7 @@ public class StaffDAO {
 					mdto.setPwd(rs.getString("pwd"));
 					mdto.setName(rs.getString("name"));
 					mdto.setRank(rs.getString("rank"));
+					mdto.setWorkTime(rs.getInt("wtime"));
 					mlist.add(mdto);
 				}
 			} catch (Exception e) {
@@ -409,7 +431,7 @@ public class StaffDAO {
 	}
 	//점주
 	private Owner showO() {
-		Owner odto=Owner.getInstance();
+		Owner odto= new Owner();
 		if(conn()) {
 			try {
 				String sql="select * from staff where rank='점주'";
@@ -420,6 +442,7 @@ public class StaffDAO {
 					odto.setPwd(rs.getString("pwd"));
 					odto.setName(rs.getString("name"));
 					odto.setRank(rs.getString("rank"));
+					odto.setWorkTime(rs.getInt("wtime"));
 					return odto;
 				}
 			} catch (Exception e) {
@@ -437,6 +460,4 @@ public class StaffDAO {
 		}
 		return null;
 	}
-	
-	
 }

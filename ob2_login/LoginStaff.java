@@ -27,7 +27,7 @@ public class LoginStaff {
 				sdao.addWtime(s, wtime);
 				s.setWorkTime(wtime);
 			}else if(selNum==2) {
-				sdao.chkWtime(s);
+				System.out.println("총 근무시간:"+s.getWorkTime());
 			}else if(selNum==3) {
 				System.out.println(s.toString());
 			}else if(selNum==4) {
@@ -36,7 +36,7 @@ public class LoginStaff {
 				String pwd=in.nextLine();
 				System.out.println("변경할 이름을 입력하세요");
 				String name=in.nextLine();
-				sdao.mod(id,pwd,name);
+				sdao.modInfo(id, pwd, name);
 			}else if(selNum==5) {
 				break;
 			}

@@ -52,7 +52,8 @@ public class StartFrame extends JFrame
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btn_1) {
-			
+			this.setVisible(false);
+			new ReviewFrame();
 		}else if(e.getSource()==btn_2) {
 			this.setVisible(false);
 			new MainFrame();
