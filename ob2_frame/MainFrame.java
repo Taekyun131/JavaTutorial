@@ -83,7 +83,7 @@ public class MainFrame extends JFrame
 				new LoginStaffFrame(login);
 			}else {
 				JOptionPane.showMessageDialog(
-						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.WARNING_MESSAGE);
+						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.ERROR_MESSAGE);
 			}
 		}else if(cbx2.getState()
 					&&e.getSource()==btn_1) {
@@ -93,10 +93,10 @@ public class MainFrame extends JFrame
 			insertPwd.setText("");
 			Manager login=sdao.loginMchk(id, pwd);
 			if(login!=null) {
-				
+				new LoginManagerFrame(login);
 			}else {
 				JOptionPane.showMessageDialog(
-						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.WARNING_MESSAGE);
+						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.ERROR_MESSAGE);
 			}
 			
 		}else if(cbx3.getState()
@@ -107,10 +107,10 @@ public class MainFrame extends JFrame
 			insertPwd.setText("");
 			Owner login=sdao.loginOchk(id, pwd);
 			if(login!=null) {
-				
+				new LoginOwnerFrame(login);
 			}else {
 				JOptionPane.showMessageDialog(
-						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.WARNING_MESSAGE);
+						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.ERROR_MESSAGE);
 			}
 			
 		}

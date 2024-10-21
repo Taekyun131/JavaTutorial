@@ -100,7 +100,7 @@ public class ReviewDAO {
 		ArrayList<ReviewDTO>rlist=new ArrayList<>();
 		if(conn()) {
 			try {
-				String sql="select * from review";
+				String sql="select * from review order by no";
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
@@ -127,5 +127,41 @@ public class ReviewDAO {
 		}
 		return rlist;
 	}
+	public int avgStar() {
+		int avg=0;
+		if(conn()) {
+			try {
+				String sql="select avg(star) from review";
+				PreparedStatement psmt=conn.prepareStatement(sql);
+				ResultSet rs=psmt.executeQuery();
+				while(rs.next()) {
+					avg=rs.getInt("avg(star)");
+				}
+				return avg;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return 0;
+	}
 	
+	public void delReview(int idx) {
+		if(conn()) {
+			try {
+				String sql="delete review where rownum=?";
+				PreparedStatement psmt=conn.prepareStatement(sql);
+				psmt.setInt(1, idx);
+				int result=psmt.executeUpdate();
+				if(result!=0) {
+					System.out.println("삭제되었습니다.");
+					conn.commit();
+				}else {
+					System.out.println("삭제실패");
+					conn.rollback();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

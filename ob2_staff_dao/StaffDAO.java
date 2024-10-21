@@ -117,13 +117,33 @@ public class StaffDAO {
 		}
 			
 	}
+	//직원삭제(idx)
+	public void del(int idx) {
+		if(conn()) {
+			try {
+				String sql="delete (select row_number() over(order by decode(rank,'점주',1,'매니저',2,'사원',3),id) as num,id from staff) where num=?";
+				PreparedStatement psmt=conn.prepareStatement(sql);
+				psmt.setInt(1, idx);
+				int result=psmt.executeUpdate();
+				if(result!=0) {
+					conn.commit();
+					System.out.println("삭제되었습니다.");
+				}else {
+					conn.rollback();
+					System.out.println("삭제실패");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	//직원전체보기
 	public ArrayList<Staff> all() {
 		slist=new ArrayList<>();
 		if(conn()) {
 			try {
 				String sql="select *from staff "
-						+ "order by decode(rank,'점주',1,'매니저',2,'사원',3),name";
+						+ "order by decode(rank,'점주',1,'매니저',2,'사원',3),id";
 						 
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				ResultSet rs=psmt.executeQuery();

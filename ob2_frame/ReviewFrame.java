@@ -9,6 +9,7 @@ import java.util.Properties;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -42,14 +43,15 @@ public class ReviewFrame extends JFrame
 	private JPanel panel_rIn_grid3=new JPanel();
 	private JPanel panel_rchk=new JPanel();
 	private JButton btn_1=new JButton("작성완료");
-	
+	private JButton btn_back=new JButton("뒤로가기");
 	//날짜선택
+	//https://stackoverflow.com/questions/26794698/how-do-i-implement-jdatepicker참조
 	UtilDateModel model=new UtilDateModel();
 	Properties p= new Properties();
 	JDatePanelImpl datePanel=new JDatePanelImpl(model,p);
 	JDatePickerImpl datePicker=new JDatePickerImpl(datePanel,new DateLabelFormater());
 	//테이블
-	//https://stackoverflow.com/questions/26794698/how-do-i-implement-jdatepicker참조
+	//https://reakwon.tistory.com/167참조
 	String header[]= {"Name","Star","Cont","Visitdate"};
 	DefaultTableModel tmodel=new DefaultTableModel(header,0);
 	JTable table=new JTable(tmodel);
@@ -62,7 +64,9 @@ public class ReviewFrame extends JFrame
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setResizable(false);
+		panel_t.add(btn_back);
 		panel_t.add(title);
+		
 		this.add(panel_t,"North");
 		panel_c.setLayout(new GridLayout(2,0));
 		this.add(panel_c);
@@ -92,14 +96,14 @@ public class ReviewFrame extends JFrame
 		
 		//리뷰확인 패널
 		panel_c.add(panel_rchk);
-		panel_rchk.setLayout(new GridLayout(3,0));
+		panel_rchk.setLayout(new GridLayout(2,0));
 		panel_rchk.add(r_chk_title);
 		
 		//리뷰테이블
 		panel_rchk.add(scrolledTable);
 		//버튼 리스너 등록
 		btn_1.addActionListener(this);
-		
+		btn_back.addActionListener(this);
 //		p.put("text.today", "Today");
 //		p.put("text.month", "Month");
 //		p.put("text.year", "Year");	
@@ -109,13 +113,20 @@ public class ReviewFrame extends JFrame
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btn_1) {
 			ReviewDTO rdto=new ReviewDTO();
-			if(rdto!=null) {
+			if(rdto.getName()!=null&&
+					rdto.getContent()!=null) {
 				addReview(rdto);
 				addTable(addReview(rdto));
 				r_name.setText("");
 				r_con.setText("");
 				r_star.setText("");
+			}else {
+				JOptionPane.showMessageDialog(
+						null,"내용을 입력하세요","리뷰작성",JOptionPane.WARNING_MESSAGE);
 			}
+		}else if(e.getSource()==btn_back) {
+			this.setVisible(false);
+			new StartFrame();
 		}
 		
 	}

@@ -115,7 +115,6 @@ public class LoginStaffFrame extends JFrame
 			modIfo();
 		}else if(e.getSource()==btn_3) {
 			this.setVisible(false);
-			new MainFrame();
 		}
 		
 	}
