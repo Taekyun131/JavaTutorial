@@ -1,23 +1,26 @@
 create table revenue(
 mname varchar2(10),
-item varchar2(10),
+item varchar2(10) not null,
 qty number(3),
 price number(7)
+indate timestamp default sysdate
 );
 
 
 create table return(
 mname varchar2(10),
-item varchar2(10),
+item varchar2(10) not null,
 qty number(3),
 price number(7)
+indate timestamp default sysdate
 );
 
 create table orderitem(
 mname varchar2(10),
-item varchar2(10),
+item varchar2(10) not null,
 qty number(3),
 price number(7)
+indate timestamp default sysdate
 );
 
 create table review(
