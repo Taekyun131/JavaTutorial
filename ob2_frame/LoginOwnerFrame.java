@@ -1,6 +1,5 @@
 package ob2_frame;
 
-import java.awt.Component;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -136,7 +135,7 @@ public class LoginOwnerFrame extends JFrame
 		panel_t1.add(title_sales);
 		panel_t1.add(sales);
 		sales.setEditable(false);
-		sales.setText(idao.inMoney()-idao.outMoney()+"원");
+		sales.setText(idao.salesMoney()+idao.returnMoney()-idao.orderMoney()+"원");
 		
 		//버튼 리스너 등록
 		btn_back.addActionListener(this);
@@ -195,7 +194,7 @@ public class LoginOwnerFrame extends JFrame
 		DefaultTableModel modelR=(DefaultTableModel)tableR.getModel();
 		for(ReviewDTO temp:rlist) {
 			String []review=new String[4];
-			review[0]=temp.getNo()+"번";
+			review[0]="번호: "+temp.getNo();
 			review[1]="별점: "+temp.getStar();
 			review[2]=temp.getContent();
 			modelR.addRow(review);
@@ -218,21 +217,23 @@ public class LoginOwnerFrame extends JFrame
 	    inRank.setText("");
 	}
 	private void delStaff() {
-		int idx=tableS.getSelectedRow()+1;
-		
-		
-//		sdao.del(idx);
-//		DefaultTableModel dm = (DefaultTableModel)tableS.getModel();
-//	    dm.getDataVector().removeAllElements();
-//	    allStaff();
+		int idx=tableS.getSelectedRow();
+		String name=(String) tableS.getValueAt(idx, 0);
+		String id=(String) tableS.getValueAt(idx, 1);
+		sdao.del(name, id);
+		DefaultTableModel dm = (DefaultTableModel)tableS.getModel();
+	    dm.getDataVector().removeAllElements();
+	    allStaff();
 
 	}
 	private void delReview() {
-//		int idx=tableR.getSelectedRow()+1;
-//		rdao.delReview(idx);
-//		DefaultTableModel dm = (DefaultTableModel)tableR.getModel();
-//	    dm.getDataVector().removeAllElements();
-//	    allReview();
-//	    total_star.setText(rdao.avgStar()+"점");
+		int idx=tableR.getSelectedRow();
+		String no= (String) tableR.getValueAt(idx,0);
+		int rno=Integer.parseInt(no.substring(4));
+		rdao.delReview(rno);
+		DefaultTableModel dm = (DefaultTableModel)tableR.getModel();
+	    dm.getDataVector().removeAllElements();
+	    allReview();
+	    total_star.setText(rdao.avgStar()+"점");
 	}
 }

@@ -43,8 +43,8 @@ public class Owner extends Manager {
 	}
 	//매출보기
 	public void showSales() {
-		int totalIn=idao.inMoney();
-		int totalOut=idao.outMoney();
+		int totalIn=idao.salesMoney()+idao.returnMoney();
+		int totalOut=idao.orderMoney();
 		System.out.println("총 금액: "+(totalIn-totalOut));
 	}
 	//리뷰확인

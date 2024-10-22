@@ -303,12 +303,13 @@ public class ItemDAO {
 					price= (int) ((int) rs.getInt("price")*qty*1.5);
 					item=rs.getString("name");
 				}
-				sql="insert into revenue values(?,?,?,?)";
+				sql="insert into revenue values(?,?,?,?,?)";
 				psmt=conn.prepareStatement(sql);
 				psmt.setString(1, mname);
 				psmt.setString(2, item);
 				psmt.setInt(3, qty);
 				psmt.setInt(4, price);
+				psmt.setInt(5, qty*price);
 				int result=psmt.executeUpdate();
 				if(result!=0) {
 					System.out.println("판매시트 등록완료");
@@ -332,8 +333,8 @@ public class ItemDAO {
 			}
 		}
 	}
-	//수익확인
-	public int inMoney() {
+	//판매시트금액
+	public int salesMoney() {
 		if(conn()) {
 			try {
 				int total=0;
@@ -343,11 +344,31 @@ public class ItemDAO {
 				while(rs.next()) {
 					total+=rs.getInt("sum");
 				}
-				sql="select sum(price*qty) as sum from return group by item";
-				psmt=conn.prepareStatement(sql);
-				rs=psmt.executeQuery();
+				return total;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(conn!=null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	//반품시트 금액
+	public int returnMoney() {
+		if(conn()) {
+			try {
+				int total=0;
+				String sql="select sum(price*qty) as sum from return group by item";
+				PreparedStatement psmt=conn.prepareStatement(sql);
+				ResultSet rs=psmt.executeQuery();
 				while(rs.next()) {
-					
 					total+=rs.getInt("sum");
 				}
 				return total;
@@ -367,7 +388,7 @@ public class ItemDAO {
 		return 0;
 	}
 	//발주비용확인
-	public int outMoney() {
+	public int orderMoney() {
 		if(conn()) {
 			try {
 				int total=0;
@@ -393,4 +414,101 @@ public class ItemDAO {
 		}
 		return 0;
 	}
+	//발주시트
+	public ArrayList<ItemDTO> chkOrder(){
+		ArrayList<ItemDTO>ilist=new ArrayList<>();
+		if(conn()) {
+			try {
+				String sql="select * from orderitem";
+				PreparedStatement psmt=conn.prepareStatement(sql);
+				ResultSet rs=psmt.executeQuery();
+				while(rs.next()) {
+					ItemDTO temp=new ItemDTO();
+					temp.setMname(rs.getString("mname"));
+					temp.setName(rs.getString("item"));
+					temp.setPrice(rs.getInt("price"));
+					temp.setQuantity(rs.getInt("qty"));
+					ilist.add(temp);
+				}
+				return ilist;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				if(conn!=null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		return null;
+	}
+	//반품시트
+		public ArrayList<ItemDTO> chkReturn(){
+			ArrayList<ItemDTO>ilist=new ArrayList<>();
+			if(conn()) {
+				try {
+					String sql="select * from return";
+					PreparedStatement psmt=conn.prepareStatement(sql);
+					ResultSet rs=psmt.executeQuery();
+					while(rs.next()) {
+						ItemDTO temp=new ItemDTO();
+						temp.setMname(rs.getString("mname"));
+						temp.setName(rs.getString("item"));
+						temp.setPrice(rs.getInt("price"));
+						temp.setQuantity(rs.getInt("qty"));
+						ilist.add(temp);
+					}
+					return ilist;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					if(conn!=null) {
+						try {
+							conn.close();
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+			return null;
+		}
+		//판매시트
+		public ArrayList<ItemDTO> chkSales(){
+			ArrayList<ItemDTO>ilist=new ArrayList<>();
+			if(conn()) {
+				try {
+					String sql="select * from revenue";
+					PreparedStatement psmt=conn.prepareStatement(sql);
+					ResultSet rs=psmt.executeQuery();
+					while(rs.next()) {
+						ItemDTO temp=new ItemDTO();
+						temp.setMname(rs.getString("mname"));
+						temp.setName(rs.getString("item"));
+						temp.setPrice(rs.getInt("price"));
+						temp.setQuantity(rs.getInt("qty"));
+						ilist.add(temp);
+					}
+					return ilist;
+				} catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					if(conn!=null) {
+						try {
+							conn.close();
+						} catch (SQLException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+			return null;
+		}
+	
 }

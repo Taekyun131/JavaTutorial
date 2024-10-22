@@ -112,17 +112,17 @@ public class ReviewFrame extends JFrame
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btn_1) {
-			ReviewDTO rdto=new ReviewDTO();
-			if(rdto.getName()!=null&&
-					rdto.getContent()!=null) {
+			if(r_name.getText().equals("")||
+					r_con.getText().equals("")) {
+				JOptionPane.showMessageDialog(
+						null,"내용을 입력하세요","리뷰작성",JOptionPane.WARNING_MESSAGE);
+			}else {
+				ReviewDTO rdto=new ReviewDTO();
 				addReview(rdto);
 				addTable(addReview(rdto));
 				r_name.setText("");
 				r_con.setText("");
 				r_star.setText("");
-			}else {
-				JOptionPane.showMessageDialog(
-						null,"내용을 입력하세요","리뷰작성",JOptionPane.WARNING_MESSAGE);
 			}
 		}else if(e.getSource()==btn_back) {
 			this.setVisible(false);

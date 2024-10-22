@@ -83,14 +83,27 @@ public class LoginManagerFrame extends JFrame
 		btn_order.addActionListener(this);
 		btn_return.addActionListener(this);
 		btn_sale.addActionListener(this);
+		btn_sheet_o.addActionListener(this);
+		btn_sheet_r.addActionListener(this);
+		btn_sheet_s.addActionListener(this);
+		
+		//테이블 데이터입력
 		showTable();
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String input=qtyIn.getText();
 		if(e.getSource()==btn_back) {//뒤로가기버튼
 			this.setVisible(false);
-		}else {
+		}else if(e.getSource()==btn_sheet_o){
+			new OrderSheetFrame();
+		}else if(e.getSource()==btn_sheet_r){
+			new ReturnSheetFrame();
+		}else if(e.getSource()==btn_sheet_s){
+			new SalesSheetFrame();
+		}
+		else {
 			if(input.equals("")){//수량 미입력시
 				JOptionPane.showMessageDialog(
 						null,"수량을 입력하세요","에러",JOptionPane.ERROR_MESSAGE);

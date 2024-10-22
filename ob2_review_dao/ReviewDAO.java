@@ -148,7 +148,7 @@ public class ReviewDAO {
 	public void delReview(int idx) {
 		if(conn()) {
 			try {
-				String sql="delete review where rownum=?";
+				String sql="delete review where no=?";
 				PreparedStatement psmt=conn.prepareStatement(sql);
 				psmt.setInt(1, idx);
 				int result=psmt.executeUpdate();

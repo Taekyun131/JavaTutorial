@@ -6,7 +6,7 @@ public class ItemDTO {
 	private String name=null;
 	private int price=0;
 	private int quantity=0;
-	
+	private String mname=null;
 	//getter&setter
 	public String getName() {
 		return name;
@@ -32,6 +32,14 @@ public class ItemDTO {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	
+	
+	public String getMname() {
+		return mname;
+	}
+	public void setMname(String mname) {
+		this.mname = mname;
 	}
 	@Override
 	public String toString() {
