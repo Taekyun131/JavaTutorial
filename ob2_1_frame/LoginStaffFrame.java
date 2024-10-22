@@ -128,6 +128,7 @@ public class LoginStaffFrame extends JFrame
 		}
 		
 	}
+	//근무시간 입력
 	private void insertWtime() {
 		int wtime1=Integer.parseInt(insert_wt.getText());
 		sdao.addWtime(login, wtime1);
@@ -137,6 +138,7 @@ public class LoginStaffFrame extends JFrame
 		infolist.add(wtime,3);
 		insert_wt.setText("");
 	}
+	//내 정보 수정
 	private void modIfo() {
 		String name=insert_name.getText();
 		String pwd=insert_pwd.getText();

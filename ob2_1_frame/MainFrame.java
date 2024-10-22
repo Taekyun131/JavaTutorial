@@ -1,5 +1,6 @@
 package ob2_1_frame;
 
+import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.FlowLayout;
@@ -27,8 +28,13 @@ public class MainFrame extends JFrame
 	private JPanel panel_i1=new JPanel();
 	private JPanel panel_i2=new JPanel();
 	private JPanel panel_i3=new JPanel();
+	private JPanel panel_i4=new JPanel();
+	private JPanel panel_i5=new JPanel();
+	private JPanel panel_i6=new JPanel();
 	private JPanel panel_b=new JPanel();
 	private JPanel panel_c=new JPanel();
+	private JPanel panel_r=new JPanel();
+	JLabel titleR=new JLabel("직급을 선택하세요");
 	CheckboxGroup cbx_g=new CheckboxGroup();
 	CheckboxGroup cbx_g2=new CheckboxGroup();
 	Checkbox cbx1=new Checkbox("직원",cbx_g,true);
@@ -39,7 +45,8 @@ public class MainFrame extends JFrame
 	JTextField insertId=new JTextField();
 	JTextField insertPwd=new JTextField();
 	JButton btn_1=new JButton("로그인");
-	private JLabel title=new JLabel("<html><body text='orange'><h2>스테이크 하우스</h2>");
+	private JLabel title=new JLabel("<html><body text='orange'><h1>스테이크 하우스</h1>");
+	private JLabel titleL=new JLabel("<html><body text='black'><h2>로그인</h2>");
 	public MainFrame() {
 		//프레임 기본설정
 		this.setBounds(150,150,600,500);
@@ -50,19 +57,27 @@ public class MainFrame extends JFrame
 		this.add(panel_t,"North");
 		this.add(panel_b);
 		panel_b.setLayout(new GridLayout(10,0));
+		panel_b.add(panel_i4);
+		panel_b.add(panel_r);
+		panel_r.setLayout(new FlowLayout());
+		panel_r.add(titleR);
+		panel_b.add(panel_c);
+		panel_i4.add(titleL);
+		panel_b.add(panel_i5);
 		panel_b.add(panel_i1);
 		panel_b.add(panel_i2);
 		panel_b.add(panel_i3);
-		panel_b.add(panel_c);
 		panel_c.setLayout(new FlowLayout());
 		panel_c.add(cbx1);
 		panel_c.add(cbx2);
 		panel_c.add(cbx3);
 		
-		panel_i1.setLayout(new GridLayout(0,2));
+		panel_i1.setLayout(new GridLayout(0,4));
+		panel_i1.add(panel_i5);
 		panel_i1.add(titleId);
 		panel_i1.add(insertId);
-		panel_i2.setLayout(new GridLayout(0,2));
+		panel_i2.setLayout(new GridLayout(0,4));
+		panel_i2.add(panel_i6);
 		panel_i2.add(titlePwd);
 		panel_i2.add(insertPwd);
 		panel_i3.add(btn_1);
@@ -72,8 +87,8 @@ public class MainFrame extends JFrame
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(cbx1.getState()
-				&&e.getSource()==btn_1) {
+		if(cbx1.getState()	
+				&&e.getSource()==btn_1) {	//체크박스 직원&로그인 시
 			String id=insertId.getText();
 			String pwd=insertPwd.getText();
 			insertId.setText("");
@@ -86,7 +101,7 @@ public class MainFrame extends JFrame
 						null,"아이디와 비밀번호를 확인하세요","로그인 실패",JOptionPane.ERROR_MESSAGE);
 			}
 		}else if(cbx2.getState()
-					&&e.getSource()==btn_1) {
+					&&e.getSource()==btn_1) {	//체크박스 매니저&로그인 시
 			String id=insertId.getText();
 			String pwd=insertPwd.getText();
 			insertId.setText("");
@@ -100,7 +115,7 @@ public class MainFrame extends JFrame
 			}
 			
 		}else if(cbx3.getState()
-					&&e.getSource()==btn_1) {
+					&&e.getSource()==btn_1) {	//체크박스 점주&로그인 시
 			String id=insertId.getText();
 			String pwd=insertPwd.getText();
 			insertId.setText("");

@@ -111,7 +111,7 @@ public class ReviewFrame extends JFrame
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource()==btn_1) {
+		if(e.getSource()==btn_1) {	//리뷰 작성버튼 
 			if(r_name.getText().equals("")||
 					r_con.getText().equals("")) {
 				JOptionPane.showMessageDialog(
@@ -123,7 +123,7 @@ public class ReviewFrame extends JFrame
 				r_con.setText("");
 				r_star.setText("");
 			}
-		}else if(e.getSource()==btn_back) {
+		}else if(e.getSource()==btn_back) {	//돌아가기버튼
 			this.setVisible(false);
 			new StartFrame();
 		}
@@ -142,6 +142,7 @@ public class ReviewFrame extends JFrame
 		rdao.review(rdto);
 		return rdto;
 	}
+	//Jtable에 리뷰 추가
 	public void addTable(ReviewDTO rdto) {
 		DefaultTableModel model=(DefaultTableModel)table.getModel();
 		String review[]=new String[4];
@@ -152,7 +153,7 @@ public class ReviewFrame extends JFrame
 		model.addRow(review);
 		
 	}
-	
+	//모든 리뷰 Jtable에 추가
 	private void DBTable() {
 		ArrayList<ReviewDTO>rlist=rdao.showReview();
 		for(ReviewDTO temp:rlist) {

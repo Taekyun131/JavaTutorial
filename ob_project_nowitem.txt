@@ -2,7 +2,7 @@ create table nowitem(
 no number(2),
 name varchar2(10),
 price number(6),
-qty number(4) default 0);
+qty number(4) default 0, check(qty>=0));
 
 create sequence nowitem_no;
 

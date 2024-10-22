@@ -127,6 +127,7 @@ public class ReviewDAO {
 		}
 		return rlist;
 	}
+	//평점계산
 	public float avgStar() {
 		float avg=0;
 		if(conn()) {
@@ -144,7 +145,7 @@ public class ReviewDAO {
 		}
 		return 0;
 	}
-	
+	//리뷰 삭제
 	public void delReview(int idx) {
 		if(conn()) {
 			try {

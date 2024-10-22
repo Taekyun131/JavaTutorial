@@ -8,7 +8,7 @@ create table comitem(
 no number(2),
 name varchar2(10),
 price number(6),
-qty number(4));
+qty number(4) check(qty>=0));
 
 create sequence comitem_no;
 

@@ -176,6 +176,7 @@ public class LoginOwnerFrame extends JFrame
 			}
 		}
 	}
+	//Jtable에 모든 직원 추가
 	private void allStaff() {
 		ArrayList<Staff>slist=sdao.all();
 		DefaultTableModel modelS=(DefaultTableModel)tableS.getModel();
@@ -189,6 +190,7 @@ public class LoginOwnerFrame extends JFrame
 		}
 		
 	}
+	//Jtable에 모든 리뷰 추가
 	private void allReview() {
 		ArrayList<ReviewDTO>rlist=rdao.showReview();
 		DefaultTableModel modelR=(DefaultTableModel)tableR.getModel();
@@ -200,7 +202,7 @@ public class LoginOwnerFrame extends JFrame
 			modelR.addRow(review);
 		}
 	}
-	
+	//직원채용
 	private void addStaff() {
 		Staff s=new Staff();
 		s.setName(inName.getText());
@@ -216,6 +218,7 @@ public class LoginOwnerFrame extends JFrame
 	    inPwd.setText("");
 	    inRank.setText("");
 	}
+	//직원퇴사
 	private void delStaff() {
 		int idx=tableS.getSelectedRow();
 		String name=(String) tableS.getValueAt(idx, 0);
@@ -226,6 +229,7 @@ public class LoginOwnerFrame extends JFrame
 	    allStaff();
 
 	}
+	//리뷰삭제
 	private void delReview() {
 		int idx=tableR.getSelectedRow();
 		String no= (String) tableR.getValueAt(idx,0);
