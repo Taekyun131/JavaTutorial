@@ -27,6 +27,8 @@ create table review(
 no number(3),
 name varchar2(10),
 content varchar2(50),
-star number(1) check(star in(1,2,3,4,5)));
+star number(1) check(star in(1,2,3,4,5)),
+indate timestamp default sysdate
+);
 
 create sequence review_no;
