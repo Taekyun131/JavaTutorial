@@ -39,6 +39,8 @@ ppt 구성
 
 7. 구현
 -주요기능>> 프로젝트 주제와 관련되는 기능
+기능: 직급별 로그인을 통해 맞춤기능 제공
+
 	1) 싱글톤 디자인
 	2-1) super: staff, sub: manager//super: manager, sub: Owner
 	2-2) super: ordersheet, sub: returnsheet, salessheet
