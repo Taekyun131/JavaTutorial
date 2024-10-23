@@ -95,7 +95,7 @@ public class ItemDAO {
 						price= rs.getInt("price");
 						item=rs.getString("name");
 					}
-					sql="insert into orderitem values(?,?,?,?)";
+					sql="insert into orderitem values(?,?,?,?,default)";
 					psmt=conn.prepareStatement(sql);
 					psmt.setString(1, mname);
 					psmt.setString(2, item);
