@@ -28,6 +28,7 @@ no number(3),
 name varchar2(10),
 content varchar2(50),
 star number(1) check(star in(1,2,3,4,5)),
+vdate
 indate timestamp default sysdate
 );
 
