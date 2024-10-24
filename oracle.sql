@@ -84,5 +84,5 @@ begin
     update nowitem set qty=qty+(:old.qty-:new.qty) where no=:new.no;
 end;
 commit;
-
+drop trigger modcom;
 drop trigger ordertrg;
