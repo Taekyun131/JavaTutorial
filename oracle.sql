@@ -76,21 +76,13 @@ select * from staff;
 commit;
 
 
-create or replace trigger modcom
-after update
-on nowitem
-for each row
-begin
-    update comitem set qty=qty-:new.qty where no=:new.no;
-end;
-
 create or replace trigger ordertrg
-after insert 
-on orderitem
+after update 
+on comitem
 for each row
 begin 
-    update nowitem set qty=qty+:new.qty where name=:new.item;
+    update nowitem set qty=qty+(:old.qty-:new.qty) where no=:new.no;
 end;
-
+commit;
 
 drop trigger ordertrg;

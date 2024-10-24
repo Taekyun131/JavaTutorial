@@ -1,6 +1,5 @@
 package ob2_1_frame;
 
-import java.awt.BorderLayout;
 import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.FlowLayout;
@@ -23,7 +22,7 @@ import ob2_1_staff_dao.StaffDAO;
 public class MainFrame extends JFrame
 						implements ActionListener{
 	
-	StaffDAO sdao=StaffDAO.getInstance();
+	private StaffDAO sdao=StaffDAO.getInstance();
 	private JPanel panel_t=new JPanel();
 	private JPanel panel_i1=new JPanel();
 	private JPanel panel_i2=new JPanel();
@@ -34,17 +33,17 @@ public class MainFrame extends JFrame
 	private JPanel panel_b=new JPanel();
 	private JPanel panel_c=new JPanel();
 	private JPanel panel_r=new JPanel();
-	JLabel titleR=new JLabel("직급을 선택하세요");
-	CheckboxGroup cbx_g=new CheckboxGroup();
-	CheckboxGroup cbx_g2=new CheckboxGroup();
-	Checkbox cbx1=new Checkbox("직원",cbx_g,true);
-	Checkbox cbx2=new Checkbox("매니저",cbx_g,false);
-	Checkbox cbx3=new Checkbox("점주",cbx_g,false);
-	JLabel titleId=new JLabel("ID: ");
-	JLabel titlePwd=new JLabel("PW: ");
-	JTextField insertId=new JTextField();
-	JTextField insertPwd=new JTextField();
-	JButton btn_1=new JButton("로그인");
+	private JLabel titleR=new JLabel("직급을 선택하세요");
+	private CheckboxGroup cbx_g=new CheckboxGroup();
+	private CheckboxGroup cbx_g2=new CheckboxGroup();
+	private Checkbox cbx1=new Checkbox("직원",cbx_g,true);
+	private Checkbox cbx2=new Checkbox("매니저",cbx_g,false);
+	private Checkbox cbx3=new Checkbox("점주",cbx_g,false);
+	private JLabel titleId=new JLabel("ID: ");
+	private JLabel titlePwd=new JLabel("PW: ");
+	private JTextField insertId=new JTextField();
+	private JTextField insertPwd=new JTextField();
+	private JButton btn_1=new JButton("로그인");
 	private JLabel title=new JLabel("<html><body text='orange'><h1>스테이크 하우스</h1>");
 	private JLabel titleL=new JLabel("<html><body text='black'><h2>로그인</h2>");
 	public MainFrame() {

@@ -39,12 +39,12 @@ public class LoginManagerFrame extends JFrame
 	private JButton btn_sheet_s=new JButton("판매시트보기");
 	//테이블
 	//https://reakwon.tistory.com/167 참조
-	String header[]= {"No","Item","Price","Qty"};
-	DefaultTableModel tmodel=new DefaultTableModel(header,0);
-	JTable table=new JTable(tmodel);
-	JScrollPane scrolledTable=new JScrollPane(table);
-	ItemDAO idao=ItemDAO.getInstance();
-	Manager m=null;
+	private String header[]= {"No","Item","Price","Qty"};
+	private DefaultTableModel tmodel=new DefaultTableModel(header,0);
+	private JTable table=new JTable(tmodel);
+	private JScrollPane scrolledTable=new JScrollPane(table);
+	private ItemDAO idao=ItemDAO.getInstance();
+	private Manager m=null;
 	
 	public LoginManagerFrame(Manager login) {
 		this.m=login;
@@ -155,7 +155,7 @@ public class LoginManagerFrame extends JFrame
 	}
 	//발주하기
 	private void orderItem(int no,int qty) {
-		idao.orderItem(no, qty);
+//		idao.orderItem(no, qty);
 		idao.addOrder(m.getName(), no, qty);
 		idao.modCom(no, qty);
 		DefaultTableModel dm = (DefaultTableModel)table.getModel();

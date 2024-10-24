@@ -8,9 +8,7 @@ import ob2_1_review_dao.ReviewDAO;
 import ob2_1_review_dto.ReviewDTO;
 
 public class Owner extends Manager {
-	public static Owner o=null;
 	ItemDAO idao=ItemDAO.getInstance();
-	
 	ReviewDAO rdao=ReviewDAO.getInstance();
 	
 	

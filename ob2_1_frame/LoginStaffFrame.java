@@ -1,6 +1,5 @@
 package ob2_1_frame;
 
-import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.List;
 import java.awt.event.ActionEvent;
@@ -20,10 +19,10 @@ public class LoginStaffFrame extends JFrame
 							implements ActionListener{
 	private Staff login=null;
 	private StaffDAO sdao=StaffDAO.getInstance();
-	String id=null;
-	String pwd=null;
-	String lname=null;
-	String wtime=null;
+	private String id=null;
+	private String pwd=null;
+	private String lname=null;
+	private String wtime=null;
 			
 	private JPanel panel_t=new JPanel();
 	private JPanel panel_c=new JPanel();

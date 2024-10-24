@@ -25,7 +25,7 @@ import ob2_1_staff_dao.StaffDAO;
 
 public class LoginOwnerFrame extends JFrame
 								implements ActionListener{
-	Owner o=null;
+	private Owner o=null;
 	private JPanel panel_t=new JPanel();
 	private JPanel panel_t1=new JPanel();
 	private JPanel panel_c=new JPanel();
@@ -58,18 +58,18 @@ public class LoginOwnerFrame extends JFrame
 	private JButton btn_ret=new JButton("사직원 제출");
 	private JButton btn_delRv=new JButton("리뷰삭제");
 	//직원테이블
-	String headerS[]= {"Name","ID","PW","Rank"};
-	DefaultTableModel tmodelS=new DefaultTableModel(headerS,0);
-	JTable tableS=new JTable(tmodelS);
-	JScrollPane scrolledTableS=new JScrollPane(tableS);
+	private String headerS[]= {"Name","ID","PW","Rank"};
+	private DefaultTableModel tmodelS=new DefaultTableModel(headerS,0);
+	private JTable tableS=new JTable(tmodelS);
+	private JScrollPane scrolledTableS=new JScrollPane(tableS);
 	//리뷰테이블
-	String headerR[]= {"No","Star","Cont"};
-	DefaultTableModel tmodelR=new DefaultTableModel(headerR,0);
-	JTable tableR=new JTable(tmodelR);
-	JScrollPane scrolledTableR=new JScrollPane(tableR);
-	StaffDAO sdao=StaffDAO.getInstance();
-	ReviewDAO rdao=ReviewDAO.getInstance();
-	ItemDAO idao=ItemDAO.getInstance();
+	private String headerR[]= {"No","Star","Cont"};
+	private DefaultTableModel tmodelR=new DefaultTableModel(headerR,0);
+	private JTable tableR=new JTable(tmodelR);
+	private JScrollPane scrolledTableR=new JScrollPane(tableR);
+	private StaffDAO sdao=StaffDAO.getInstance();
+	private ReviewDAO rdao=ReviewDAO.getInstance();
+	private ItemDAO idao=ItemDAO.getInstance();
 	LoginOwnerFrame(Owner o){
 		this.o=o;
 		this.setBounds(150,150,600,500);

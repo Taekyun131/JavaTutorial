@@ -42,17 +42,21 @@ ppt 구성
 기능: 직급별 로그인을 통해 맞춤기능 제공
 
 	1) 싱글톤 디자인
-	2-1) super: staff, sub: manager//super: manager, sub: Owner
-	2-2) super: ordersheet, sub: returnsheet, salessheet
-	2-3) super: jframe, interface: actionlistener
+	2) 상속
+		2-1) super: staff, sub: manager//super: manager, sub: Owner
+		2-2) super: ordersheet, sub: returnsheet, salessheet
+		2-3) super: jframe, interface: actionlistener
 	3) 접근제어자 public ,private, protected, default
 	4) 로그인 시 주소주입
 	5) 상속, 오버라이딩 중복코드 줄임
 	6) swing, awt 패키지 사용(jframe, actionlistener, 
 	7) jdatepicker 사용
 	8) dao, dto
-	9) 
+	9) 트리거사용
 8. 고찰
 느낀점, 시도해본 기술, 전반적인 내용, 아쉬운점이나 구현못한 점 지양
 
+**수정사항**
+기술: 로그인-주소주입, 목록 출력-컬렉션프레임워크(ArrayList), 
+DAO(DB에 접근하여 데이터를 조작하는 기능 수행)와 DTO(데이터전송객체)-CRUD와 관련지어 설명 ,
 

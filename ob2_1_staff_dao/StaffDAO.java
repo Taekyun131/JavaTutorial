@@ -1,17 +1,19 @@
 package ob2_1_staff_dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import ob2_1_info.Info;
 import ob2_1_staff.Manager;
 import ob2_1_staff.Owner;
 import ob2_1_staff.Staff;
 
-public class StaffDAO {
+public class StaffDAO extends Info {
+	private StaffDAO(){
+		init();
+	}
 	//싱글톤 디자인
 	public static StaffDAO sdao=null;
 	public static StaffDAO getInstance() {
@@ -21,39 +23,37 @@ public class StaffDAO {
 		return sdao;
 	}
 	
-	ArrayList<Staff> slist=null;
-	ArrayList<Manager> mlist=null;
-	Owner [] olist=new Owner[1];
-	Staff sdto=null;
-	private String username="system";
-	private String password="11111111";
-	private String url="jdbc:oracle:thin:@localhost:1521:orcl";
-	private String driverName="oracle.jdbc.driver.OracleDriver";
-	private Connection conn=null;
+	private ArrayList<Staff> slist=null;
+	private ArrayList<Manager> mlist=null;
+	private Owner [] olist=new Owner[1];
+	private Staff sdto=null;
+//	private String username="system";
+//	private String password="11111111";
+//	private String url="jdbc:oracle:thin:@localhost:1521:orcl";
+//	private String driverName="oracle.jdbc.driver.OracleDriver";
+//	private Connection conn=null;
 	
-	private StaffDAO(){
-		init();
-	}
 	
-	private void init() {//드라이버 로드
-		try {
-			Class.forName(driverName);
-//			System.out.println("오라클 드라이버 로드 성공");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-	private boolean conn() {//커넥션 가져오는 공통 코드를 메서드로 정의
-		try {
-			conn=DriverManager.getConnection(
-					url,username,password);
-//			System.out.println("커넥션 자원 획득 성공");
-			return true;	//커넥션 자원을 정상적으로 획득할 시
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return false;	//커넥션 자원을 획득하지 못한 경우
-	}
+	
+//	private void init() {//드라이버 로드
+//		try {
+//			Class.forName(driverName);
+////			System.out.println("오라클 드라이버 로드 성공");
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//	private boolean conn() {//커넥션 가져오는 공통 코드를 메서드로 정의
+//		try {
+//			conn=DriverManager.getConnection(
+//					url,username,password);
+////			System.out.println("커넥션 자원 획득 성공");
+//			return true;	//커넥션 자원을 정상적으로 획득할 시
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return false;	//커넥션 자원을 획득하지 못한 경우
+//	}
 	//직원 추가
 	public void add(Staff s) {
 		if(conn()) {
